@@ -7,6 +7,17 @@ gem 'rails', '3.1.2'
 
 gem 'sqlite3'
 
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem "pg"
+end
+
+gem "heroku"
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.

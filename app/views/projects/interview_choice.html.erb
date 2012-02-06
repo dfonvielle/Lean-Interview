@@ -1,0 +1,12 @@
+# I copied this coding from the show page as a starting point, as I want to route to this page after entering a project name...
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

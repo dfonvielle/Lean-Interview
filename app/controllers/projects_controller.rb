@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  
+
+
   # GET /projects
   # GET /projects.json
   def index
@@ -81,3 +84,16 @@ class ProjectsController < ApplicationController
     end
   end
 end
+
+# GET /projects/interview_choice
+# GET /projects/interview_choice.json
+def interview_choice
+  @project = Project.find(params[:id])
+
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @project }
+  end
+end
+
+

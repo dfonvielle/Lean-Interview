@@ -2,7 +2,14 @@ LeanInterview::Application.routes.draw do
   
   root :to => 'pages#home'
   
-  resources :projects
+  resources :projects do
+    member do
+      get "interview_choice"    
+    end   
+  end
+  
+  
+  get "projects/interview_choice"
 
   get "pages/home"
 

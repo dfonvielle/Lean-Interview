@@ -1,4 +1,9 @@
 LeanInterview::Application.routes.draw do
+  
+  root :to => 'pages#home'
+  
+  resources :projects
+
   get "pages/home"
 
   get "pages/about"
@@ -8,6 +13,8 @@ LeanInterview::Application.routes.draw do
   get "pages/verification"
 
   get "pages/hypotheses"
+  
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

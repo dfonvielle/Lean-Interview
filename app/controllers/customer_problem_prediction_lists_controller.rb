@@ -24,6 +24,7 @@ class CustomerProblemPredictionListsController < ApplicationController
   # GET /customer_problem_prediction_lists/new
   # GET /customer_problem_prediction_lists/new.json
   def new
+    @interview = Interview.find(params[:interview_id])
     @customer_problem_prediction_list = CustomerProblemPredictionList.new
 
     respond_to do |format|
@@ -41,10 +42,11 @@ class CustomerProblemPredictionListsController < ApplicationController
   # POST /customer_problem_prediction_lists.json
   def create
     @customer_problem_prediction_list = CustomerProblemPredictionList.new(params[:customer_problem_prediction_list])
+    @interview = @customer_problem_prediction_list.interview
 
     respond_to do |format|
       if @customer_problem_prediction_list.save
-        format.html { redirect_to @customer_problem_prediction_list, notice: 'Customer problem prediction list was successfully created.' }
+        format.html { redirect_to new_interview_customer_segment_prediction_list_path(@interview), notice: 'Customer problem prediction list was successfully created.' }
         format.json { render json: @customer_problem_prediction_list, status: :created, location: @customer_problem_prediction_list }
       else
         format.html { render action: "new" }

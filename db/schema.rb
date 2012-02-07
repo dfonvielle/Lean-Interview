@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120207164252) do
+ActiveRecord::Schema.define(:version => 20120207174302) do
+
+  create_table "customer_problem_prediction_lists", :force => true do |t|
+    t.string   "problem_1_prediction"
+    t.string   "problem_1_pain_level_prediction"
+    t.string   "problem_2_prediction"
+    t.string   "problem_2_pain_level_prediction"
+    t.string   "problem_3_prediction"
+    t.string   "problem_3_pain_level_prediction"
+    t.integer  "interview_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customer_segment_prediction_lists", :force => true do |t|
     t.string   "customer_segment_1_prediction"

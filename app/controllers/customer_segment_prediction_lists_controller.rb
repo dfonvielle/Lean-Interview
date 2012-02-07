@@ -24,6 +24,8 @@ class CustomerSegmentPredictionListsController < ApplicationController
   # GET /customer_segment_prediction_lists/new
   # GET /customer_segment_prediction_lists/new.json
   def new
+    
+    @interview = Interview.find(params[:interview_id])
     @customer_segment_prediction_list = CustomerSegmentPredictionList.new
 
     respond_to do |format|

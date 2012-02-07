@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Page that Provides Interview Choice for the Project Just Created</h2>
+<h2>Project: <%= @project.name %></h2>
+
+</br>
+
+<h3>Create Problem Interview</h3>
 
 <p>
-  <b>Project Name:</b>
-  <%= @project.name %>
+  <%= render "interviews/problem_interview_form" %>
 </p>
 
-<p>
-  <b>Create Problem Interview:</b>
-  <%= "This is where we'll have a problem interview form rendered." %>
-</p>
+</br>
+
+<h3>Create Solution Interview</h3>
 
 <p>
-  <b>Create a Solution Interview:</b>
   <%= "This feature is coming soon." %>
 </p>
 

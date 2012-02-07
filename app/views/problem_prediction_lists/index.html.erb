@@ -1,0 +1,35 @@
+<h1>Listing problem_prediction_lists</h1>
+
+<table>
+  <tr>
+    <th>Problem 1 prediction</th>
+    <th>Problem 1 pain level prediction</th>
+    <th>Problem 2 prediction</th>
+    <th>Problem 2 pain level prediction</th>
+    <th>Problem 3 prediction</th>
+    <th>Problem 3 pain level prediction</th>
+    <th>Interview</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @problem_prediction_lists.each do |problem_prediction_list| %>
+  <tr>
+    <td><%= problem_prediction_list.problem_1_prediction %></td>
+    <td><%= problem_prediction_list.problem_1_pain_level_prediction %></td>
+    <td><%= problem_prediction_list.problem_2_prediction %></td>
+    <td><%= problem_prediction_list.problem_2_pain_level_prediction %></td>
+    <td><%= problem_prediction_list.problem_3_prediction %></td>
+    <td><%= problem_prediction_list.problem_3_pain_level_prediction %></td>
+    <td><%= problem_prediction_list.interview_id %></td>
+    <td><%= link_to 'Show', problem_prediction_list %></td>
+    <td><%= link_to 'Edit', edit_problem_prediction_list_path(problem_prediction_list) %></td>
+    <td><%= link_to 'Destroy', problem_prediction_list, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Problem prediction list', new_problem_prediction_list_path %>

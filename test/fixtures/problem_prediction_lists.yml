@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  problem_1_prediction: MyString
+  problem_1_pain_level_prediction: MyString
+  problem_2_prediction: MyString
+  problem_2_pain_level_prediction: MyString
+  problem_3_prediction: MyString
+  problem_3_pain_level_prediction: MyString
+  interview_id: 1
+
+two:
+  problem_1_prediction: MyString
+  problem_1_pain_level_prediction: MyString
+  problem_2_prediction: MyString
+  problem_2_pain_level_prediction: MyString
+  problem_3_prediction: MyString
+  problem_3_pain_level_prediction: MyString
+  interview_id: 1

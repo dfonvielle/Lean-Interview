@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202224002) do
+ActiveRecord::Schema.define(:version => 20120206194431) do
+
+  create_table "interviews", :force => true do |t|
+    t.string   "name"
+    t.string   "interview_type"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+  end
+
+  create_table "problem_prediction_lists", :force => true do |t|
+    t.string   "problem_1_prediction"
+    t.string   "problem_1_pain_level_prediction"
+    t.string   "problem_2_prediction"
+    t.string   "problem_2_pain_level_prediction"
+    t.string   "problem_3_prediction"
+    t.string   "problem_3_pain_level_prediction"
+    t.integer  "interview_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "name"

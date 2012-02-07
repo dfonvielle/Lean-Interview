@@ -1,5 +1,5 @@
 LeanInterview::Application.routes.draw do
-  
+
   root :to => 'pages#home'
   
   resources :projects do
@@ -8,6 +8,9 @@ LeanInterview::Application.routes.draw do
     end   
   end
   
+  resources :interviews do
+      resources :problem_prediction_lists
+  end
   
   get "projects/interview_choice"
 

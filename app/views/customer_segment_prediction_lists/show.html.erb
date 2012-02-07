@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer segment 1 prediction:</b>
+  <%= @customer_segment_prediction_list.customer_segment_1_prediction %>
+</p>
+
+<p>
+  <b>Customer segment 2 prediction:</b>
+  <%= @customer_segment_prediction_list.customer_segment_2_prediction %>
+</p>
+
+<p>
+  <b>Customer segment 3 prediction:</b>
+  <%= @customer_segment_prediction_list.customer_segment_3_prediction %>
+</p>
+
+<p>
+  <b>Interview:</b>
+  <%= @customer_segment_prediction_list.interview_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_segment_prediction_list_path(@customer_segment_prediction_list) %> |
+<%= link_to 'Back', customer_segment_prediction_lists_path %>

@@ -1,0 +1,29 @@
+<h1>Listing customer_segment_prediction_lists</h1>
+
+<table>
+  <tr>
+    <th>Customer segment 1 prediction</th>
+    <th>Customer segment 2 prediction</th>
+    <th>Customer segment 3 prediction</th>
+    <th>Interview</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customer_segment_prediction_lists.each do |customer_segment_prediction_list| %>
+  <tr>
+    <td><%= customer_segment_prediction_list.customer_segment_1_prediction %></td>
+    <td><%= customer_segment_prediction_list.customer_segment_2_prediction %></td>
+    <td><%= customer_segment_prediction_list.customer_segment_3_prediction %></td>
+    <td><%= customer_segment_prediction_list.interview_id %></td>
+    <td><%= link_to 'Show', customer_segment_prediction_list %></td>
+    <td><%= link_to 'Edit', edit_customer_segment_prediction_list_path(customer_segment_prediction_list) %></td>
+    <td><%= link_to 'Destroy', customer_segment_prediction_list, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer segment prediction list', new_customer_segment_prediction_list_path %>

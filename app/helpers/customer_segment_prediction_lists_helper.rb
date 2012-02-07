@@ -1,0 +1,2 @@
+module CustomerSegmentPredictionListsHelper
+end

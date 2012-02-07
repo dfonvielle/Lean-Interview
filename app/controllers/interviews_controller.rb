@@ -44,7 +44,7 @@ class InterviewsController < ApplicationController
 
     respond_to do |format|
       if @interview.save
-        format.html { redirect_to new_interview_problem_prediction_list_path, notice: 'Interview was successfully created.' }
+        format.html { redirect_to new_interview_problem_prediction_list_path(@interview), notice: 'Interview was successfully created.' }
         format.json { render json: @interview, status: :created, location: @interview }
       else
         format.html { render action: "new" }

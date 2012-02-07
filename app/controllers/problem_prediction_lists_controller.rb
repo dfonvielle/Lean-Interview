@@ -24,8 +24,9 @@ class ProblemPredictionListsController < ApplicationController
   # GET /problem_prediction_lists/new
   # GET /problem_prediction_lists/new.json
   def new
+    @interview = Interview.find(params[:interview_id])
     @problem_prediction_list = ProblemPredictionList.new
-    # @interview = Interview.find(params[:id])
+    @problem_prediction_list.interview_id = @interview.id
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_segment_1_prediction: MyString
+  customer_segment_2_prediction: MyString
+  customer_segment_3_prediction: MyString
+  interview_id: 1
+
+two:
+  customer_segment_1_prediction: MyString
+  customer_segment_2_prediction: MyString
+  customer_segment_3_prediction: MyString
+  interview_id: 1

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Existing solution 1 prediction:</b>
+  <%= @customer_solution_prediction_list.existing_solution_1_prediction %>
+</p>
+
+<p>
+  <b>Existing solution 2 prediction:</b>
+  <%= @customer_solution_prediction_list.existing_solution_2_prediction %>
+</p>
+
+<p>
+  <b>Existing solution 3 prediction:</b>
+  <%= @customer_solution_prediction_list.existing_solution_3_prediction %>
+</p>
+
+<p>
+  <b>Interview:</b>
+  <%= @customer_solution_prediction_list.interview_id %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @customer_solution_prediction_list.project_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_solution_prediction_list_path(@customer_solution_prediction_list) %> |
+<%= link_to 'Back', customer_solution_prediction_lists_path %>

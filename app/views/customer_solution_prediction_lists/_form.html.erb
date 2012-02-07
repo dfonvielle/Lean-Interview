@@ -1,0 +1,37 @@
+<%= form_for(@customer_solution_prediction_list) do |f| %>
+  <% if @customer_solution_prediction_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer_solution_prediction_list.errors.count, "error") %> prohibited this customer_solution_prediction_list from being saved:</h2>
+
+      <ul>
+      <% @customer_solution_prediction_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :existing_solution_1_prediction %><br />
+    <%= f.text_field :existing_solution_1_prediction %>
+  </div>
+  <div class="field">
+    <%= f.label :existing_solution_2_prediction %><br />
+    <%= f.text_field :existing_solution_2_prediction %>
+  </div>
+  <div class="field">
+    <%= f.label :existing_solution_3_prediction %><br />
+    <%= f.text_field :existing_solution_3_prediction %>
+  </div>
+  <div class="field">
+    <%= f.label :interview_id %><br />
+    <%= f.number_field :interview_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.number_field :project_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -2,6 +2,8 @@ LeanInterview::Application.routes.draw do
 
 
 
+  resources :customer_solution_prediction_lists
+
   root :to => 'pages#home'
   
   resources :projects 

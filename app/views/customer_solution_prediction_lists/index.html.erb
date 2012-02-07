@@ -1,0 +1,31 @@
+<h1>Listing customer_solution_prediction_lists</h1>
+
+<table>
+  <tr>
+    <th>Existing solution 1 prediction</th>
+    <th>Existing solution 2 prediction</th>
+    <th>Existing solution 3 prediction</th>
+    <th>Interview</th>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customer_solution_prediction_lists.each do |customer_solution_prediction_list| %>
+  <tr>
+    <td><%= customer_solution_prediction_list.existing_solution_1_prediction %></td>
+    <td><%= customer_solution_prediction_list.existing_solution_2_prediction %></td>
+    <td><%= customer_solution_prediction_list.existing_solution_3_prediction %></td>
+    <td><%= customer_solution_prediction_list.interview_id %></td>
+    <td><%= customer_solution_prediction_list.project_id %></td>
+    <td><%= link_to 'Show', customer_solution_prediction_list %></td>
+    <td><%= link_to 'Edit', edit_customer_solution_prediction_list_path(customer_solution_prediction_list) %></td>
+    <td><%= link_to 'Destroy', customer_solution_prediction_list, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer solution prediction list', new_customer_solution_prediction_list_path %>

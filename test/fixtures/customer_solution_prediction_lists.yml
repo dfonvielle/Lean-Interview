@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  existing_solution_1_prediction: MyString
+  existing_solution_2_prediction: MyString
+  existing_solution_3_prediction: MyString
+  interview_id: 1
+  project_id: 1
+
+two:
+  existing_solution_1_prediction: MyString
+  existing_solution_2_prediction: MyString
+  existing_solution_3_prediction: MyString
+  interview_id: 1
+  project_id: 1

@@ -1,2 +1,18 @@
 <h1>Pages#verification</h1>
+
+<p>Theoretically, will be able to populate this page with verification info...</p>
+
+<%= "{@interview.id} is the interview number for this interview..."  %>
+
+<%= "The interview name is..." %>
+
+<%= @interview.name %>
+
+<%= "And the interview id is..." %>
+
+<%= @interview.id %>
+
+<p></p>
 <p>Find me in app/views/pages/verification.html.erb</p>
+
+<p><%= link_to "Continue", pages_hypotheses_path(:interview_id => @interview.id) %></p>

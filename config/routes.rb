@@ -1,9 +1,5 @@
 LeanInterview::Application.routes.draw do
 
-
-
-  resources :customer_solution_prediction_lists
-
   root :to => 'pages#home'
   
   resources :projects 
@@ -11,6 +7,7 @@ LeanInterview::Application.routes.draw do
   resources :interviews do
       resources :customer_problem_prediction_lists
       resources :customer_segment_prediction_lists
+      resources :customer_solution_prediction_lists
   end
   
   get "projects/interview_choice"

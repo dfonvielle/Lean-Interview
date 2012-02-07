@@ -18,6 +18,9 @@ class PagesController < ApplicationController
   end
 
   def verification
+    
+    @interview = Interview.find(params[:interview_id])
+    
   end
 
   def hypotheses

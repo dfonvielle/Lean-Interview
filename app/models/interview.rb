@@ -6,4 +6,6 @@ class Interview < ActiveRecord::Base
   
   has_many :customer_segment_prediction_lists
   
+  has_many :customer_solution_prediction_lists
+  
 end

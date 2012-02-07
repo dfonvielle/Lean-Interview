@@ -43,6 +43,7 @@ class CustomerSegmentPredictionListsController < ApplicationController
   # POST /customer_segment_prediction_lists.json
   def create
     @customer_segment_prediction_list = CustomerSegmentPredictionList.new(params[:customer_segment_prediction_list])
+    @interview = @customer_segment_prediction_list.interview
 
     respond_to do |format|
       if @customer_segment_prediction_list.save

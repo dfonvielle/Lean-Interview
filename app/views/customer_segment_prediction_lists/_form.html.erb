@@ -23,10 +23,11 @@
     <%= f.label :customer_segment_3_prediction %><br />
     <%= f.text_field :customer_segment_3_prediction %>
   </div>
-  <div class="field">
-    <%= f.label :interview_id %><br />
-    <%= f.number_field :interview_id %>
+  <div class="hidden field">
+    <%= f.hidden_field :interview_id, :value => @interview.id %>
   </div>
+  <div class="hidden field">
+    <%= f.hidden_field :project_id, :value => @interview.project.id %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @interview.name %>
-</p>
+
 
 <p>
   <b>Interview type:</b>
@@ -14,6 +11,111 @@
   <b>Description:</b>
   <%= @interview.description %>
 </p>
+
+<h1>Problem Interview 1 for <%= @interview.project.name %></h1>
+
+<h2>"<%= @interview.name %>"</h2>
+
+</br>
+
+
+<h3>NAME AND CONTACT INFO</h3>
+
+<p>First name:________________      Last name:_________________</p>
+
+<p>E-mail: ______________            Phone:________________     Twitter:__________________</p>
+
+
+<h3>CUSTOMER SEGMENTS</h3>
+
+<p>1. <%= @interview.customer_segment_prediction_list.customer_segment_1_prediction.capitalize %>? [ ] </p>
+<p>2. <%= @interview.customer_segment_prediction_list.customer_segment_2_prediction.capitalize %>? [ ] </p>
+<p>3. <%= @interview.customer_segment_prediction_list.customer_segment_3_prediction.capitalize %>? [ ] </p>
+
+<p>Other segment(s): _____________</p>
+
+
+
+<h3>PROBLEMS FOR CUSTOMERS</h3>
+
+<p>Customer ranking:   1 = Most important problem to the customer, 2 = 2nd most important problem, 3 = 3rd most important problem</p>
+
+<p>Customer pain/interest level:  1 = Must have a solution to the problem, 2 = Nice to have solution to the problem, 3 = No need for solution to the problem</p>
+
+<h4>Problem 1: <%= @interview.customer_problem_prediction_list.problem_1_prediction.capitalize %></h4>
+
+<p>Customer ranking:  (Choose 1, 2, or 3)</p> 
+
+<p>Customer's pain/interest level: (Choose 1, 2, or 3)</p>  
+
+<p>Solution(s): Templates from Lean Startup "gurus" (like Ash Maurya)? [ ] </p>
+
+<ul>
+  <li>Sol 1: ?</li>
+  <li>Sol 2: ?</li>
+  <li>Sol 3: ?</li>
+  
+</ul>
+
+<p>Other solution(s):</p>
+
+
+<h4>Problem 2: <%= @interview.customer_problem_prediction_list.problem_2_prediction.capitalize %></h4>
+
+<p>Customer ranking:  (Choose 1, 2, or 3)</p> 
+
+<p>Customer's pain/interest level: (Choose 1, 2, or 3)</p>  
+
+<p>Solution: Asking whatever "feels" right to them (intuition instead of strategy)? [ ]</p> 
+
+<p>Other solution(s):</p>
+
+
+<h4>Problem 3: <%= @interview.customer_problem_prediction_list.problem_3_prediction.capitalize %></h4>
+
+<p>Customer ranking:  (Choose 1, 2, or 3)</p>
+
+<p>Customer's pain/interest level: (Choose 1, 2, or 3)</p>  
+
+<p>Solution: Spreadsheets (like Microsoft Excel)? [ ]</p>
+
+<p>Other solution(s):</p>
+
+
+
+<p>Other problem(s):_____________</p>
+
+
+
+
+<h3>ADDITIONAL THOUGHTS</h3>
+
+
+<p>Notes: _____________</p>
+
+
+<h3>REFERENCES</h3>
+
+<p>Referred by: _____________</p>
+
+<p>Referrals: _____________</p>
+
+
+<h3>INTERVIEWER'S CONCLUSIONS</h3>
+
+<p>Early adopter? [ ] </p>
+
+<p>Why or why not? _________________</p>
+
+<p>If early adopter, which channels for access? _________________</p>
+
+<p>Other conclusion(s): ______________</p>
+
+<p>Date Interviewed: ________________</p>
+
+<p>Interviewed by: _______________</p>
+
+
 
 
 <%= link_to 'Edit', edit_interview_path(@interview) %> |

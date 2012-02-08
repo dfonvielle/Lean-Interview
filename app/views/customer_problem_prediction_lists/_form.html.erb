@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :problem_1_prediction %><br />
+    <%= f.label :problem_1_prediction, "Problem 1 (biggest problem to your customers)" %><br />
     <%= f.text_field :problem_1_prediction %>
   </div>
   <div class="field">
-    <%= f.label :problem_1_pain_level_prediction %><br />
+    <%= f.label :problem_1_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
     <%= f.text_field :problem_1_pain_level_prediction %>
   </div>
   <div class="field">
-    <%= f.label :problem_2_prediction %><br />
+    <%= f.label :problem_2_prediction, "Problem 2 (next biggest problem)" %><br />
     <%= f.text_field :problem_2_prediction %>
   </div>
   <div class="field">
-    <%= f.label :problem_2_pain_level_prediction %><br />
+    <%= f.label :problem_2_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
     <%= f.text_field :problem_2_pain_level_prediction %>
   </div>
   <div class="field">
-    <%= f.label :problem_3_prediction %><br />
+    <%= f.label :problem_3_prediction, "Problem 3 (third biggest problem)" %><br />
     <%= f.text_field :problem_3_prediction %>
   </div>
   <div class="field">
-    <%= f.label :problem_3_pain_level_prediction %><br />
+    <%= f.label :problem_3_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
     <%= f.text_field :problem_3_pain_level_prediction %>
   </div>
   <div class="hidden field">
@@ -42,6 +42,6 @@
     <%= f.hidden_field :project_id, :value => @interview.project.id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "NEXT -->" %>
   </div>
 <% end %>

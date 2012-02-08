@@ -1,2 +1,72 @@
-<h1>Pages#hypotheses</h1>
-<p>Find me in app/views/pages/hypotheses.html.erb</p>
+<h1>Congratulations!</h1>  
+
+<h1>Here are the hypotheses that you will be testing during your Problem Interview: </h1>
+
+<h3>Early Adopters</h3>
+
+<p>
+  Hypothesis 1: Early adopters of <%= @interview.project.name %> will be 
+<%= @interview.customer_segment_prediction_list.customer_segment_1_prediction.downcase %>.
+</p>
+
+<p>
+  Hypothesis 2: Early adopters of <%= @interview.project.name %> will be 
+  <%= @interview.customer_segment_prediction_list.customer_segment_2_prediction.downcase%>.
+</p>
+
+<p>
+  Hypothesis 3: Early adopters of <%= @interview.project.name %> will be 
+  <%= @interview.customer_segment_prediction_list.customer_segment_3_prediction.downcase%>.
+</p>
+
+<h3>Problem Rankings</h3>
+
+<p>
+  Hypothesis 4: <%= @interview.customer_problem_prediction_list.problem_1_prediction.capitalize %> will be voted as the #1 problem by early adopters.
+</p>
+
+<p>
+  Hypothesis 5: <%= @interview.customer_problem_prediction_list.problem_2_prediction.capitalize %> will be voted as the #2 problem by early adopters.
+</p>
+
+<p>
+  Hypothesis 6: <%= @interview.customer_problem_prediction_list.problem_3_prediction.capitalize %> will be voted as the #3 problem by early adopters.
+</p>
+
+<h3>"Pain Level" (or Interest Level) in Problems</h3>
+
+<p>
+  Hypothesis 7: <%= @interview.customer_problem_prediction_list.problem_1_prediction.capitalize %> will be seen as a 
+"<%= @interview.customer_problem_prediction_list.problem_1_pain_level_prediction.downcase %>" by early adopters for providing a solution.
+</p>
+
+<p>
+  Hypothesis 8: <%= @interview.customer_problem_prediction_list.problem_2_prediction.capitalize %> will be seen as a 
+"<%= @interview.customer_problem_prediction_list.problem_2_pain_level_prediction.downcase %>" by early adopters for providing a solution.  
+</p>
+
+<p>
+  Hypothesis 9: <%= @interview.customer_problem_prediction_list.problem_3_prediction.capitalize %> will be seen as a 
+"<%= @interview.customer_problem_prediction_list.problem_3_pain_level_prediction.downcase %>" by early adopters for providing a solution.
+</p>
+
+<h3>Current Solutions for Problems</h3>
+
+<p>
+  Hypothesis 10: Early adopters of <%= @interview.project.name %> currently use
+  <%= @interview.customer_solution_prediction_list.existing_solution_1_prediction.downcase %> as a solution.
+</p>
+
+<p>
+  Hypothesis 11: Early adopters of <%= @interview.project.name %> currently use
+  <%= @interview.customer_solution_prediction_list.existing_solution_2_prediction.downcase %> as a solution.
+</p>
+
+<p>
+  Hypothesis 12: Early adopters of <%= @interview.project.name %> currently use
+  <%= @interview.customer_solution_prediction_list.existing_solution_3_prediction.downcase %> as a solution.
+</p>
+
+
+
+<p><%= link_to "Continue to Interview Questions!", interview_path(@interview) %></p>

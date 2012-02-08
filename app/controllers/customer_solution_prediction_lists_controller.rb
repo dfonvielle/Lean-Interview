@@ -35,7 +35,8 @@ class CustomerSolutionPredictionListsController < ApplicationController
 
   # GET /customer_solution_prediction_lists/1/edit
   def edit
-    @customer_solution_prediction_list = CustomerSolutionPredictionList.find(params[:id])
+    @interview = Interview.find(params[:interview_id])
+    @customer_solution_prediction_list = @interview.customer_solution_prediction_list
   end
 
   # POST /customer_solution_prediction_lists

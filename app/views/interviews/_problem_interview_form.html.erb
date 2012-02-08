@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Enter name for interview:" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="hidden field">
@@ -22,10 +22,6 @@
   <div class="hidden field">
     <!-- <%= f.label :project_id %><br /> -->
     <%= f.hidden_field :project_id, :value => @project.id %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :customer_segment_1_prediction %><br />
+    <%= f.label :customer_segment_1_prediction, "Customer Segment 1" %><br />
     <%= f.text_field :customer_segment_1_prediction %>
   </div>
   <div class="field">
-    <%= f.label :customer_segment_2_prediction %><br />
+    <%= f.label :customer_segment_2_prediction, "Customer Segment 2" %><br />
     <%= f.text_field :customer_segment_2_prediction %>
   </div>
   <div class="field">
-    <%= f.label :customer_segment_3_prediction %><br />
+    <%= f.label :customer_segment_3_prediction, "Customer Segment 3" %><br />
     <%= f.text_field :customer_segment_3_prediction %>
   </div>
   <div class="hidden field">
@@ -30,6 +30,6 @@
     <%= f.hidden_field :project_id, :value => @interview.project.id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "NEXT -->"%>
   </div>
 <% end %>

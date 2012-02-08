@@ -24,6 +24,9 @@ class PagesController < ApplicationController
   end
 
   def hypotheses
+    
+    @interview = Interview.find(params[:interview_id])
+    
   end
 
 end

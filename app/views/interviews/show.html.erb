@@ -1,20 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 
-
-<p>
-  <b>Interview type:</b>
-  <%= @interview.interview_type %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @interview.description %>
-</p>
-
 <h1>Problem Interview 1 for <%= @interview.project.name %></h1>
 
-<h2>"<%= @interview.name %>"</h2>
+<h2>"<%= @interview.name %>"    <%= link_to "see hypotheses", pages_hypotheses_path(:interview_id => @interview.id) %></h2>
 
 </br>
 
@@ -48,13 +37,12 @@
 
 <p>Customer's pain/interest level: (Choose 1, 2, or 3)</p>  
 
-<p>Solution(s): Templates from Lean Startup "gurus" (like Ash Maurya)? [ ] </p>
+<p>Solution(s):</p>
 
 <ul>
-  <li>Sol 1: ?</li>
-  <li>Sol 2: ?</li>
-  <li>Sol 3: ?</li>
-  
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_1_prediction.capitalize %>? [ ]</li>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_2_prediction.capitalize %>? [ ]</li>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_3_prediction.capitalize %>? [ ]</li>
 </ul>
 
 <p>Other solution(s):</p>
@@ -66,7 +54,13 @@
 
 <p>Customer's pain/interest level: (Choose 1, 2, or 3)</p>  
 
-<p>Solution: Asking whatever "feels" right to them (intuition instead of strategy)? [ ]</p> 
+<p>Solution(s):</p>
+
+<ul>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_1_prediction.capitalize %>? [ ]</li>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_2_prediction.capitalize %>? [ ]</li>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_3_prediction.capitalize %>? [ ]</li>
+</ul>
 
 <p>Other solution(s):</p>
 
@@ -77,7 +71,13 @@
 
 <p>Customer's pain/interest level: (Choose 1, 2, or 3)</p>  
 
-<p>Solution: Spreadsheets (like Microsoft Excel)? [ ]</p>
+<p>Solution(s):</p>
+
+<ul>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_1_prediction.capitalize %>? [ ]</li>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_2_prediction.capitalize %>? [ ]</li>
+  <li><%= @interview.customer_solution_prediction_list.existing_solution_3_prediction.capitalize %>? [ ]</li>
+</ul>
 
 <p>Other solution(s):</p>
 
@@ -116,7 +116,3 @@
 <p>Interviewed by: _______________</p>
 
 
-
-
-<%= link_to 'Edit', edit_interview_path(@interview) %> |
-<%= link_to 'Back', interviews_path %>

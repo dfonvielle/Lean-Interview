@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
   
+  validates :name, :presence => true
+  
   has_many :interviews
   
   has_many :customer_problem_prediction_lists

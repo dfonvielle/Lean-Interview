@@ -1,5 +1,7 @@
 class Interview < ActiveRecord::Base
   
+  validates :name, :presence => true
+  
   belongs_to :project
   
   has_one :customer_problem_prediction_list

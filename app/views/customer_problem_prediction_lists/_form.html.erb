@@ -10,37 +10,60 @@
       </ul>
     </div>
   <% end %>
+  
+<fieldset>
+  <legend>Problem 1</legend>
+    <div class="field">
+      <%= f.label :problem_1_prediction, "Problem 1 (biggest problem to your customers)" %><br />
+      <%= f.text_field :problem_1_prediction, :placeholder => "Enter Problem 1" %>
+    </div>
+    <div class="field">
+      <%= f.label :problem_1_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
+      <%= f.text_field :problem_1_pain_level_prediction %>
+    </div>
+</fieldset> 
 
-  <div class="field">
-    <%= f.label :problem_1_prediction, "Problem 1 (biggest problem to your customers)" %><br />
-    <%= f.text_field :problem_1_prediction %>
-  </div>
-  <div class="field">
-    <%= f.label :problem_1_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
-    <%= f.text_field :problem_1_pain_level_prediction %>
-  </div>
-  <div class="field">
-    <%= f.label :problem_2_prediction, "Problem 2 (next biggest problem)" %><br />
-    <%= f.text_field :problem_2_prediction %>
-  </div>
-  <div class="field">
-    <%= f.label :problem_2_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
-    <%= f.text_field :problem_2_pain_level_prediction %>
-  </div>
-  <div class="field">
-    <%= f.label :problem_3_prediction, "Problem 3 (third biggest problem)" %><br />
-    <%= f.text_field :problem_3_prediction %>
-  </div>
-  <div class="field">
-    <%= f.label :problem_3_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
-    <%= f.text_field :problem_3_pain_level_prediction %>
-  </div>
+
+<fieldset>
+  <legend>Problem 2</legend>  
+    <div class="field">
+      <%= f.label :problem_2_prediction, "Problem 2 (next biggest problem)" %><br />
+      <%= f.text_field :problem_2_prediction %>
+    </div>
+    <div class="field">
+      <%= f.label :problem_2_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
+      <%= f.text_field :problem_2_pain_level_prediction %>
+    </div>
+</fieldset> 
+  
+  
+<fieldset>
+  <legend>Problem 3</legend>
+    <div class="field">
+      <%= f.label :problem_3_prediction, "Problem 3 (third biggest problem)" %><br />
+      <%= f.text_field :problem_3_prediction %>
+    </div>
+    <div class="field">
+      <%= f.label :problem_3_pain_level_prediction, "How important is a solution to this problem for your customers? (must have, nice to have, don't need)" %><br />
+      <%= f.text_field :problem_3_pain_level_prediction %>
+    </div>
+</fieldset>   
+
   <div class="hidden field">
     <%= f.hidden_field :interview_id, :value => @interview.id %>
   </div>
   <div class="hidden field">
     <%= f.hidden_field :project_id, :value => @interview.project.id %>
   </div>
+  
+  <!-- <input type="radio" name="day" value="Friday" checked>Friday
+  <input type="radio" name="day" value="Saturday">Saturday
+  <input type="radio" name="day" value="Sunday">Sunday -->
+
+
+<label for="username">Username</label>
+
+
   <div class="actions">
     <%= f.submit "NEXT -->" %>
   </div>

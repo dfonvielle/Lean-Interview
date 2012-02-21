@@ -13,9 +13,20 @@
   
   <div id="container">
   
-  <h1><%= link_to "Lean Interview", pages_home_path %></h1>
+    <h1><%= link_to "Lean Interview", pages_home_path %></h1>
+  
+    <%if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    <%end%>
+    
+    <%if flash[:error] %>
+      <p id="error"><%= flash[:error] %></p>
+    <%end%>
+  
 
-<%= yield %>
+    <%= yield %>
+  
+  </div>
 
 </body>
 </html>

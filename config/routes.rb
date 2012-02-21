@@ -1,8 +1,14 @@
 LeanInterview::Application.routes.draw do
 
-  resources :users
-
   root :to => 'pages#home'
+
+  get "sessions/new"
+
+  post "sessions/create"
+
+  delete "sessions/destroy"
+
+  resources :users
   
   resources :projects 
   

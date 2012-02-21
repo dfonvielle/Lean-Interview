@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # @user = User.find(session[:user_id])
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -44,9 +45,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:user_id] = @user.id
+        format.html { redirect_to @user, notice: 'Thanks for signing up!' }
         format.json { render json: @user, status: :created, location: @user }
       else
+        flash[:notice] = "Sign up did not work."
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

@@ -8,7 +8,7 @@ LeanInterview::Application.routes.draw do
 
   delete "sessions/destroy"
 
-  resources :users
+  resources :users, :except => [:index]
   
   resources :projects 
   

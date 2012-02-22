@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :require_user 
+  
   # GET /users
   # GET /users.json
   def index
@@ -13,8 +16,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    # @user = User.find(session[:user_id])
-    @user = User.find(params[:id])
+    
+    #Before this, the require_user filter has run, meaning we know there is a current user that we can access with current_user method 
+    #current_user method is in the Application Controller
+    
+    
+    @user = current_user
+    # @user = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229142403) do
+ActiveRecord::Schema.define(:version => 20120229212106) do
 
   create_table "customer_problem_prediction_lists", :force => true do |t|
     t.string   "problem_1_prediction"
@@ -72,6 +72,38 @@ ActiveRecord::Schema.define(:version => 20120229142403) do
     t.string   "predicted_solution_2_for_prob_3"
     t.string   "predicted_solution_3_for_prob_3"
     t.string   "solution_importance_3"
+  end
+
+  create_table "interview_responses", :force => true do |t|
+    t.integer  "interview_id"
+    t.integer  "project_id"
+    t.integer  "contact_id"
+    t.boolean  "customer_solution_1_for_prob_1"
+    t.boolean  "customer_solution_2_for_prob_1"
+    t.boolean  "customer_solution_3_for_prob_1"
+    t.string   "other_solutions_for_prob_1"
+    t.string   "solution_importance_for_prob_1"
+    t.boolean  "customer_solution_1_for_prob_2"
+    t.boolean  "customer_solution_2_for_prob_2"
+    t.boolean  "customer_solution_3_for_prob_2"
+    t.string   "other_solutions_for_prob_2"
+    t.string   "solution_importance_for_prob_2"
+    t.boolean  "customer_solution_1_for_prob_3"
+    t.boolean  "customer_solution_2_for_prob_3"
+    t.boolean  "customer_solution_3_for_prob_3"
+    t.string   "other_solutions_for_prob_3"
+    t.string   "solution_importance_for_prob_3"
+    t.string   "problem_1_ranking"
+    t.string   "problem_2_ranking"
+    t.string   "problem_3_ranking"
+    t.boolean  "customer_segment_1"
+    t.boolean  "customer_segment_2"
+    t.boolean  "customer_segment_3"
+    t.string   "other_customer_segments"
+    t.text     "additional_notes"
+    t.string   "possible_early_adopter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "interviews", :force => true do |t|

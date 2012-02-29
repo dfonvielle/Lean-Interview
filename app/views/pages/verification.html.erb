@@ -1,4 +1,12 @@
-<h2>Great! Almost there... Let's just make sure that we have the correct information that "<%= @project.name %>" is looking to verify: </h2>
+<div class="alert alert-info">
+ <h3>Great! Almost there... Let's just make sure that we have the correct information that "<%= @project.name %>" is looking to verify:
+ </h3>
+ <br />
+
+</div>
+
+
+<h2> </h2>
 <br >
 
 
@@ -7,7 +15,7 @@
 
 <fieldset>
   
-  <legend>Identified Problems</legend>
+  <legend>Information Verification</legend>
 
   <div class="well">
      <p>The biggest problem you're going to address is <strong><%= @hypothetical_problem.description_1.downcase %></strong>.</p>
@@ -41,6 +49,10 @@
 
 
 
+<ul class="pager well btn-large btn-primary">
+  <li><%= link_to "Continue", href="#" %> 
+  </li>
+</ul>
 
 
 

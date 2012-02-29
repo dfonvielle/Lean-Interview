@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  predicted_customer_segment_1: MyString
+  predicted_customer_segment_2: MyString
+  predicted_customer_segment_3: MyString
+  predicted_solution_1: MyString
+  predicted_solution_2: MyString
+  predicted_solution_3: MyString
+  no_need_for_solution: false
+  nice_to_have_solution: false
+  must_have_solution: false
+  interview_id: 1
+  project_id: 1
+  user_id: 1
+
+two:
+  description: MyString
+  predicted_customer_segment_1: MyString
+  predicted_customer_segment_2: MyString
+  predicted_customer_segment_3: MyString
+  predicted_solution_1: MyString
+  predicted_solution_2: MyString
+  predicted_solution_3: MyString
+  no_need_for_solution: false
+  nice_to_have_solution: false
+  must_have_solution: false
+  interview_id: 1
+  project_id: 1
+  user_id: 1

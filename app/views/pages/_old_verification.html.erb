@@ -1,0 +1,23 @@
+<h3>Going into the interview, you have assumptions about people's problems and their importance</h3>
+
+<ul>
+  
+  <li>You think that <%= @interview.customer_problem_prediction_list.problem_1_prediction.downcase %> is the most important problem to people, and customers will consider it a "<%= @interview.customer_problem_prediction_list.problem_1_pain_level_prediction.downcase %>" for providing a solution</li></br>
+  
+  <li>You think that <%= @interview.customer_problem_prediction_list.problem_2_prediction.downcase %> is the second most important problem to people, and customers will consider it a "<%= @interview.customer_problem_prediction_list.problem_2_pain_level_prediction.downcase %>" for providing a solution</li></br>
+  
+  <li>You think that <%= @interview.customer_problem_prediction_list.problem_3_prediction.downcase %> is the third most important problem to people, and customers will consider it a "<%= @interview.customer_problem_prediction_list.problem_3_pain_level_prediction.downcase %>" for providing a solution</li>
+  
+</ul>
+
+<h3>You have assumptions about who's interested in these problems</h3>
+
+<p><%= "You believe that #{@interview.customer_segment_prediction_list.customer_segment_1_prediction.downcase}, #{@interview.customer_segment_prediction_list.customer_segment_2_prediction.downcase}, and #{@interview.customer_segment_prediction_list.customer_segment_3_prediction.downcase} currently deal with these problems and want a great solution for them." %></p>
+
+<h3>And you have assumptions about how these people currently solve these problems</h3>
+
+<p><%= "You believe they are currently using #{@interview.customer_solution_prediction_list.existing_solution_1_prediction.downcase}, #{@interview.customer_solution_prediction_list.existing_solution_2_prediction.downcase}, and #{@interview.customer_solution_prediction_list.existing_solution_3_prediction.downcase} as the top 3 ways for resolving those issues." %></p>
+
+<h3>Is all of this correct?</h3>
+
+<h2><%= link_to "YES -->", pages_hypotheses_path(:interview_id => @interview.id) %></h2>

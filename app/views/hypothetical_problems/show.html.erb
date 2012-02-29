@@ -1,0 +1,45 @@
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</label>
+<p><%= @hypothetical_problem.description %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.predicted_customer_segment_1", :default => t("activerecord.labels.predicted_customer_segment_1", :default => "Predicted customer segment 1")) %>:</label>
+<p><%= @hypothetical_problem.predicted_customer_segment_1 %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.predicted_customer_segment_2", :default => t("activerecord.labels.predicted_customer_segment_2", :default => "Predicted customer segment 2")) %>:</label>
+<p><%= @hypothetical_problem.predicted_customer_segment_2 %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.predicted_customer_segment_3", :default => t("activerecord.labels.predicted_customer_segment_3", :default => "Predicted customer segment 3")) %>:</label>
+<p><%= @hypothetical_problem.predicted_customer_segment_3 %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.predicted_solution_1", :default => t("activerecord.labels.predicted_solution_1", :default => "Predicted solution 1")) %>:</label>
+<p><%= @hypothetical_problem.predicted_solution_1 %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.predicted_solution_2", :default => t("activerecord.labels.predicted_solution_2", :default => "Predicted solution 2")) %>:</label>
+<p><%= @hypothetical_problem.predicted_solution_2 %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.predicted_solution_3", :default => t("activerecord.labels.predicted_solution_3", :default => "Predicted solution 3")) %>:</label>
+<p><%= @hypothetical_problem.predicted_solution_3 %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.no_need_for_solution", :default => t("activerecord.labels.no_need_for_solution", :default => "No need for solution")) %>:</label>
+<p><%= @hypothetical_problem.no_need_for_solution %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.nice_to_have_solution", :default => t("activerecord.labels.nice_to_have_solution", :default => "Nice to have solution")) %>:</label>
+<p><%= @hypothetical_problem.nice_to_have_solution %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.must_have_solution", :default => t("activerecord.labels.must_have_solution", :default => "Must have solution")) %>:</label>
+<p><%= @hypothetical_problem.must_have_solution %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.interview_id", :default => t("activerecord.labels.interview_id", :default => "Interview")) %>:</label>
+<p><%= @hypothetical_problem.interview_id %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.project_id", :default => t("activerecord.labels.project_id", :default => "Project")) %>:</label>
+<p><%= @hypothetical_problem.project_id %></p>
+
+<label class="label"><%= t("activerecord.attributes.hypothetical_problem.user_id", :default => t("activerecord.labels.user_id", :default => "User")) %>:</label>
+<p><%= @hypothetical_problem.user_id %></p>
+
+<div class="form-actions">
+<%= link_to "Back", hypothetical_problems_path, :class => 'btn'  %>
+<%= link_to "Edit", edit_hypothetical_problem_path(@hypothetical_problem), :class => 'btn' %>
+<%= link_to "Delete", hypothetical_problem_path(@hypothetical_problem), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+</div>

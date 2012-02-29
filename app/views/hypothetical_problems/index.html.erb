@@ -1,0 +1,17 @@
+<h1>Hypothetical Problems for <%= @interview.project.name %></h1> <br />
+
+
+<h2><%= "You have created #{@hypothetical_problems.count} problems for your project. 3 is the ideal number to shoot for." %></h2><br />
+
+<% @hypothetical_problems.each do |hypothetical_problem| %>
+  <p><%= hypothetical_problem.description %></p><br />
+<% end %>
+
+<div class="form-actions">
+  <button class="btn btn-primary btn-large">
+    <%= link_to "Howdy" %>
+  </button>
+  <a class="btn btn-primary"><%= link_to "Bob" %></a>
+</div>
+
+

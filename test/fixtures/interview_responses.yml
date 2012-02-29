@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  interview_id: 1
+  project_id: 1
+  contact_id: 1
+  customer_solution_1_for_prob_1: false
+  customer_solution_2_for_prob_1: false
+  customer_solution_3_for_prob_1: false
+  other_solutions_for_prob_1: MyString
+  solution_importance_for_prob_1: MyString
+  customer_solution_1_for_prob_2: false
+  customer_solution_2_for_prob_2: false
+  customer_solution_3_for_prob_2: false
+  other_solutions_for_prob_2: MyString
+  solution_importance_for_prob_2: MyString
+  customer_solution_1_for_prob_3: false
+  customer_solution_2_for_prob_3: false
+  customer_solution_3_for_prob_3: false
+  other_solutions_for_prob_3: MyString
+  solution_importance_for_prob_3: MyString
+  problem_1_ranking: MyString
+  problem_2_ranking: MyString
+  problem_3_ranking: MyString
+  customer_segment_1: false
+  customer_segment_2: false
+  customer_segment_3: false
+  other_customer_segments: MyString
+  additional_notes: MyText
+  possible_early_adopter: MyString
+
+two:
+  interview_id: 1
+  project_id: 1
+  contact_id: 1
+  customer_solution_1_for_prob_1: false
+  customer_solution_2_for_prob_1: false
+  customer_solution_3_for_prob_1: false
+  other_solutions_for_prob_1: MyString
+  solution_importance_for_prob_1: MyString
+  customer_solution_1_for_prob_2: false
+  customer_solution_2_for_prob_2: false
+  customer_solution_3_for_prob_2: false
+  other_solutions_for_prob_2: MyString
+  solution_importance_for_prob_2: MyString
+  customer_solution_1_for_prob_3: false
+  customer_solution_2_for_prob_3: false
+  customer_solution_3_for_prob_3: false
+  other_solutions_for_prob_3: MyString
+  solution_importance_for_prob_3: MyString
+  problem_1_ranking: MyString
+  problem_2_ranking: MyString
+  problem_3_ranking: MyString
+  customer_segment_1: false
+  customer_segment_2: false
+  customer_segment_3: false
+  other_customer_segments: MyString
+  additional_notes: MyText
+  possible_early_adopter: MyString

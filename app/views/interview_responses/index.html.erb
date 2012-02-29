@@ -1,0 +1,75 @@
+<h1>Listing interview_responses</h1>
+
+<table>
+  <tr>
+    <th>Interview</th>
+    <th>Project</th>
+    <th>Contact</th>
+    <th>Customer solution 1 for prob 1</th>
+    <th>Customer solution 2 for prob 1</th>
+    <th>Customer solution 3 for prob 1</th>
+    <th>Other solutions for prob 1</th>
+    <th>Solution importance for prob 1</th>
+    <th>Customer solution 1 for prob 2</th>
+    <th>Customer solution 2 for prob 2</th>
+    <th>Customer solution 3 for prob 2</th>
+    <th>Other solutions for prob 2</th>
+    <th>Solution importance for prob 2</th>
+    <th>Customer solution 1 for prob 3</th>
+    <th>Customer solution 2 for prob 3</th>
+    <th>Customer solution 3 for prob 3</th>
+    <th>Other solutions for prob 3</th>
+    <th>Solution importance for prob 3</th>
+    <th>Problem 1 ranking</th>
+    <th>Problem 2 ranking</th>
+    <th>Problem 3 ranking</th>
+    <th>Customer segment 1</th>
+    <th>Customer segment 2</th>
+    <th>Customer segment 3</th>
+    <th>Other customer segments</th>
+    <th>Additional notes</th>
+    <th>Possible early adopter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @interview_responses.each do |interview_response| %>
+  <tr>
+    <td><%= interview_response.interview_id %></td>
+    <td><%= interview_response.project_id %></td>
+    <td><%= interview_response.contact_id %></td>
+    <td><%= interview_response.customer_solution_1_for_prob_1 %></td>
+    <td><%= interview_response.customer_solution_2_for_prob_1 %></td>
+    <td><%= interview_response.customer_solution_3_for_prob_1 %></td>
+    <td><%= interview_response.other_solutions_for_prob_1 %></td>
+    <td><%= interview_response.solution_importance_for_prob_1 %></td>
+    <td><%= interview_response.customer_solution_1_for_prob_2 %></td>
+    <td><%= interview_response.customer_solution_2_for_prob_2 %></td>
+    <td><%= interview_response.customer_solution_3_for_prob_2 %></td>
+    <td><%= interview_response.other_solutions_for_prob_2 %></td>
+    <td><%= interview_response.solution_importance_for_prob_2 %></td>
+    <td><%= interview_response.customer_solution_1_for_prob_3 %></td>
+    <td><%= interview_response.customer_solution_2_for_prob_3 %></td>
+    <td><%= interview_response.customer_solution_3_for_prob_3 %></td>
+    <td><%= interview_response.other_solutions_for_prob_3 %></td>
+    <td><%= interview_response.solution_importance_for_prob_3 %></td>
+    <td><%= interview_response.problem_1_ranking %></td>
+    <td><%= interview_response.problem_2_ranking %></td>
+    <td><%= interview_response.problem_3_ranking %></td>
+    <td><%= interview_response.customer_segment_1 %></td>
+    <td><%= interview_response.customer_segment_2 %></td>
+    <td><%= interview_response.customer_segment_3 %></td>
+    <td><%= interview_response.other_customer_segments %></td>
+    <td><%= interview_response.additional_notes %></td>
+    <td><%= interview_response.possible_early_adopter %></td>
+    <td><%= link_to 'Show', interview_response %></td>
+    <td><%= link_to 'Edit', edit_interview_response_path(interview_response) %></td>
+    <td><%= link_to 'Destroy', interview_response, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Interview response', new_interview_response_path %>

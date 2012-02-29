@@ -1,10 +1,17 @@
-<%= simple_form_for(@interview_response) do |f| %>
+<%= simple_form_for([@interview, @interview_response]) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :interview_id %>
-    <%= f.input :project_id %>
-    <%= f.input :contact_id %>
+    <div class="form-inputs">
+    
+    <div class="hidden-field">
+         <%= f.hidden_field :interview_id, :value => @interview.id %>
+    </div>
+    
+    <div class="hidden-field">
+         <%= f.hidden_field :project_id, :value => @project.id %>
+    </div>
+    
+
     <%= f.input :customer_solution_1_for_prob_1 %>
     <%= f.input :customer_solution_2_for_prob_1 %>
     <%= f.input :customer_solution_3_for_prob_1 %>

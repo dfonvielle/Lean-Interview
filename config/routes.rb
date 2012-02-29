@@ -1,7 +1,5 @@
 LeanInterview::Application.routes.draw do
 
-  resources :interview_responses
-
   root :to => 'pages#home'
 
   get "sessions/new"
@@ -20,6 +18,7 @@ LeanInterview::Application.routes.draw do
       resources :hypothetical_problems
       resources :customer_problem_prediction_lists
       resources :customer_segment_prediction_lists
+      resources :interview_responses
       resources :customer_solution_prediction_lists
   end
   

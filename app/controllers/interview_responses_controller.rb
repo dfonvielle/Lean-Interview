@@ -24,6 +24,9 @@ class InterviewResponsesController < ApplicationController
   # GET /interview_responses/new
   # GET /interview_responses/new.json
   def new
+    
+    @interview = Interview.find(params[:interview_id])
+    @project = @interview.project
     @interview_response = InterviewResponse.new
 
     respond_to do |format|

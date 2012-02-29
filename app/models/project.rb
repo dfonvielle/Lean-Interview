@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
   
   validates :name, :presence => true
   
+  belongs_to :user
+  
   has_many :interviews
   
   has_many :customer_problem_prediction_lists

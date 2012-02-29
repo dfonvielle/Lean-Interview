@@ -1,20 +1,30 @@
 
-<div>
-  <h1>Sign In</h1>
-  <%= form_tag sessions_create_url do %>
-    <ul>
-      <li class="text">
-        <%= label_tag :email, "Email"%>
-        <%= text_field_tag :email %>
-      </li>
-      <li class="text">
-        <%= label_tag :password, "Password"%>
-        <%= password_field_tag :password %>
-      </li>
-      <li class="submit">
-        <%= submit_tag "Sign In" %>
-      </li>
-    </ul>
-  <% end %>
+<div class="row">
+  <div class="span4">
+    </br>
+    </br>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4 offset4 well">
+    <h1>Sign In</h1>
+    </br>
+    <%= form_tag sessions_create_url do %>
+      <ul class="unstyled">
+        <li class="text">
+          <%= label_tag :email, "Email"%>
+          <%= text_field_tag :email %>
+        </li>
+        <li class="text">
+          <%= label_tag :password, "Password"%>
+          <%= password_field_tag :password %>
+        </li>
+        <li class="submit">
+          <%= submit_tag "Sign In" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
 </div>
 

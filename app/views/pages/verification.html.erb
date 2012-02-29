@@ -1,33 +1,46 @@
-<h1>Ok, great. So let's review.</h1>
+<h2>Great! Almost there... Let's just make sure that we have the correct information that "<%= @project.name %>" is looking to verify: </h2>
+<br >
 
-<h3>You have a product (or service) in mind</h3>
 
-<p>It's called "<%= @interview.project.name %>".</p>
 
-<h3>You'll conduct a Problem Interview to identify early adopters and learn from them</h3>
 
-<p>It's called "<%= @interview.name %>".</p>
 
-<h3>Going into the interview, you have assumptions about people's problems and their importance</h3>
-
-<ul>
+<fieldset>
   
-  <li>You think that <%= @interview.customer_problem_prediction_list.problem_1_prediction.downcase %> is the most important problem to people, and customers will consider it a "<%= @interview.customer_problem_prediction_list.problem_1_pain_level_prediction.downcase %>" for providing a solution</li></br>
+  <legend>Identified Problems</legend>
+
+  <div class="well">
+     <p>The biggest problem you're going to address is <strong><%= @hypothetical_problem.description_1.downcase %></strong>.</p>
+     <p>Currently, people are using <strong><%= @hypothetical_problem.predicted_solution_1_for_prob_1.downcase %></strong> , and/or <strong><%= @hypothetical_problem.predicted_solution_2_for_prob_1.downcase %></strong> , and/or <strong><%= @hypothetical_problem.predicted_solution_3_for_prob_1.downcase %></strong>  to solve this problem.</p>
+     <p>A better solution to this problem for them is <strong><%= @hypothetical_problem.solution_importance_1.downcase %></strong>.</p>
+     <p><em><%= link_to "Edit", href="#" %></em></p>
+  </div>
   
-  <li>You think that <%= @interview.customer_problem_prediction_list.problem_2_prediction.downcase %> is the second most important problem to people, and customers will consider it a "<%= @interview.customer_problem_prediction_list.problem_2_pain_level_prediction.downcase %>" for providing a solution</li></br>
+
+  <div class="well">
+     <p>The biggest problem you're going to address is <strong><%= @hypothetical_problem.description_2.downcase %></strong>.</p>
+     <p>Currently, people are using <strong><%= @hypothetical_problem.predicted_solution_1_for_prob_2.downcase %></strong> , and/or <strong><%= @hypothetical_problem.predicted_solution_2_for_prob_2.downcase %></strong> , and/or <strong><%= @hypothetical_problem.predicted_solution_3_for_prob_2.downcase %></strong>  to solve this problem.</p>
+     <p>A better solution to this problem for them is <strong><%= @hypothetical_problem.solution_importance_2.downcase %></strong>.</p>
+     <p><em><%= link_to "Edit", href="#" %></em></p>
+  </div>
+
+  <div class="well">
+     <p>The biggest problem you're going to address is <strong><%= @hypothetical_problem.description_3.downcase %></strong>.</p>
+     <p>Currently, people are using <strong><%= @hypothetical_problem.predicted_solution_1_for_prob_3.downcase %></strong> , and/or <strong><%= @hypothetical_problem.predicted_solution_2_for_prob_3.downcase %></strong> , and/or <strong><%= @hypothetical_problem.predicted_solution_3_for_prob_3.downcase %></strong>  to solve this problem.</p>
+     <p>A better solution to this problem for them is <strong><%= @hypothetical_problem.solution_importance_3.downcase %></strong>.</p>
+     <p><em><%= link_to "Edit", href="#" %></em></p>
+  </div>
   
-  <li>You think that <%= @interview.customer_problem_prediction_list.problem_3_prediction.downcase %> is the third most important problem to people, and customers will consider it a "<%= @interview.customer_problem_prediction_list.problem_3_pain_level_prediction.downcase %>" for providing a solution</li>
-  
-</ul>
+  <div class="well">
+     <p>The customer segments that you'll be targeting will be:</p>
+     <p><strong><%= @customer_segment_prediction_list.customer_segment_1_prediction.capitalize %></strong> , and/or <strong><%= @customer_segment_prediction_list.customer_segment_2_prediction.downcase %></strong> , and/or <strong><%= @customer_segment_prediction_list.customer_segment_3_prediction.downcase %></strong>.</p>
+     <p><em><%= link_to "Edit", href="#" %></em></p>
+  </div>
 
-<h3>You have assumptions about who's interested in these problems</h3>
+</fieldset>
 
-<p><%= "You believe that #{@interview.customer_segment_prediction_list.customer_segment_1_prediction.downcase}, #{@interview.customer_segment_prediction_list.customer_segment_2_prediction.downcase}, and #{@interview.customer_segment_prediction_list.customer_segment_3_prediction.downcase} currently deal with these problems and want a great solution for them." %></p>
 
-<h3>And you have assumptions about how these people currently solve these problems</h3>
 
-<p><%= "You believe they are currently using #{@interview.customer_solution_prediction_list.existing_solution_1_prediction.downcase}, #{@interview.customer_solution_prediction_list.existing_solution_2_prediction.downcase}, and #{@interview.customer_solution_prediction_list.existing_solution_3_prediction.downcase} as the top 3 ways for resolving those issues." %></p>
 
-<h3>Is all of this correct?</h3>
 
-<h2><%= link_to "YES -->", pages_hypotheses_path(:interview_id => @interview.id) %></h2>
+

@@ -10,26 +10,30 @@
       </ul>
     </div>
   <% end %>
+  
+<fieldset>
+  
+  <legend>Enter Up to Three Customer Segments</legend>
 
-  <div class="field">
-    <%= f.label :customer_segment_1_prediction, "Customer Segment 1" %><br />
-    <%= f.text_field :customer_segment_1_prediction %>
+  <br />
+  
+  <div class="field customer-segments">
+    <%= f.text_field :customer_segment_1_prediction, :placeholder => "segment 1" %>
+    <%= f.text_field :customer_segment_2_prediction, :placeholder => "segment 2 (optional)" %>
+    <%= f.text_field :customer_segment_3_prediction, :placeholder => "segment 3 (optional)" %>
   </div>
-  <div class="field">
-    <%= f.label :customer_segment_2_prediction, "Customer Segment 2" %><br />
-    <%= f.text_field :customer_segment_2_prediction %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_segment_3_prediction, "Customer Segment 3" %><br />
-    <%= f.text_field :customer_segment_3_prediction %>
-  </div>
+  
   <div class="hidden field">
     <%= f.hidden_field :interview_id, :value => @interview.id %>
   </div>
   <div class="hidden field">
     <%= f.hidden_field :project_id, :value => @interview.project.id %>
   </div>
-  <div class="actions">
-    <%= f.submit "NEXT -->"%>
+  
+  <div class="form-actions">
+    <%= f.submit "Submit", :class => "btn btn-primary btn-large"%>
   </div>
+
+</fieldset>
+
 <% end %>

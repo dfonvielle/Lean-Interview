@@ -10,4 +10,6 @@ class Interview < ActiveRecord::Base
   
   has_one :customer_solution_prediction_list
   
+  has_one :hypothetical_problem
+  
 end

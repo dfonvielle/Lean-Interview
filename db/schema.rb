@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221211308) do
+ActiveRecord::Schema.define(:version => 20120229142403) do
 
   create_table "customer_problem_prediction_lists", :force => true do |t|
     t.string   "problem_1_prediction"
@@ -46,6 +46,34 @@ ActiveRecord::Schema.define(:version => 20120221211308) do
     t.datetime "updated_at"
   end
 
+  create_table "hypothetical_problems", :force => true do |t|
+    t.string   "description"
+    t.string   "predicted_solution_1"
+    t.string   "predicted_solution_2"
+    t.string   "predicted_solution_3"
+    t.integer  "interview_id"
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "solution_importance"
+    t.string   "description_1"
+    t.string   "predicted_solution_1_for_prob_1"
+    t.string   "predicted_solution_2_for_prob_1"
+    t.string   "predicted_solution_3_for_prob_1"
+    t.string   "solution_importance_1"
+    t.string   "description_2"
+    t.string   "predicted_solution_1_for_prob_2"
+    t.string   "predicted_solution_2_for_prob_2"
+    t.string   "predicted_solution_3_for_prob_2"
+    t.string   "solution_importance_2"
+    t.string   "description_3"
+    t.string   "predicted_solution_1_for_prob_3"
+    t.string   "predicted_solution_2_for_prob_3"
+    t.string   "predicted_solution_3_for_prob_3"
+    t.string   "solution_importance_3"
+  end
+
   create_table "interviews", :force => true do |t|
     t.string   "name"
     t.string   "interview_type"
@@ -78,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20120221211308) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

@@ -1,12 +1,23 @@
 # I copied this coding from the show page as a starting point, as I want to route to this page after entering a project name...
 
-<p id="notice"><%= notice %></p>
+<h1>Pick the kind of interview you want to conduct for<%= @project.name %></h1>
+
+
+
+<div class="row">
+  <div class="span3">
+      <h2>Problem Interview</h2>
+  </div>
+  <div class="span3">
+      <h2>Solution Interview</h2> 
+  </div>
+</div>
+
 
 <p>
   <b>Name:</b>
-  <%= @project.name %>
-</p>
 
+</p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

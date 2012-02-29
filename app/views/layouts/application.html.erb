@@ -34,13 +34,25 @@
             <span class="i-bar"></span>
             <span class="i-bar"></span>
           </a>
-          <a class="brand" href="#">Lean Interview</a>
+          <%= link_to "Lean Interview", pages_home_path, :class => "brand" %>
+          <!-- <a class="brand" href="#">Lean Interview</a> -->
           <div class="container nav-collapse">
-            <ul class="nav pull-right">
-                <li><%= link_to "About", "/path1"  %></li>
-                <li><%= link_to "Sign In", "/path2"  %></li>
-                <li><%= link_to "Create Account", "/path3"  %></li>
-            </ul>
+            
+            <% if logged_in? %>
+              <ul class="nav pull-right">
+                <li><%= link_to "About", "#"  %></li>
+                <li><%= link_to "My Account", user_url(current_user) %></li>
+                <li><%= link_to "Sign Out", sessions_destroy_url, :method => :delete %></li>
+              </ul>
+            <% else %>
+              <ul class="nav pull-right">
+                <li><%= link_to "About", "#"  %></li>
+                <li><%= link_to "Sign In", sessions_new_url %></li>
+                <li><%= link_to "Create Account", new_user_url %></li>
+              </ul>
+            <% end %>
+            
+            
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -48,23 +60,27 @@
 
 
     <div class="container">
-        <div class="content">
-          <div class="row">
-            <div class="span12">
-            <% [:notice, :error, :alert].each do |level| %>
-            <% unless flash[level].blank? %>
-             <div data-alert="alert" class="alert alert-<%= flash_class(level) %> fade in">
-                <a class="close" data-dismiss="alert" href="#">&times;</a>
-                <%= content_tag :p, flash[level] %>
-              </div><!-- /data-alert -->
-              <% end %>
+      
+      <div class="content">
+        <div class="row">
+          <div class="span12">
+          <% [:notice, :error, :alert].each do |level| %>
+          <% unless flash[level].blank? %>
+           <div data-alert="alert" class="alert alert-<%= flash_class(level) %> fade in">
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              <%= content_tag :p, flash[level] %>
+            </div><!-- /data-alert -->
             <% end %>
-            <%= yield %>
-            </div><!-- /span12 -->
-          </div><!-- /row -->
-        </div><!-- /content -->
+          <% end %>
+          <%= yield %>
+          </div><!-- /span12 -->
+        </div><!-- /row -->
+      </div><!-- /content -->
 
       <footer>
+        </br>
+        </br>
+        </br>
         <p>&copy; Lean Interview 2012</p>
       </footer>
 

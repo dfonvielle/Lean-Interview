@@ -1,4 +1,17 @@
-<h1>Who are the top 3 customer segments that are trying to solve this problem?</h1>
+
+<div class="alert alert-info">
+ <h3>Ok... The biggest problem(s) that "<%= @project.name %>" will address are:
+   <p></p>
+   <p>#1: <%= @hypothetical_problem.description_1 %></p>
+   <p>#2: <%= @hypothetical_problem.description_2 %></p>
+   <p>#3: <%= @hypothetical_problem.description_3 %></p>
+ </h3>
+ <br />
+
+ <h4 class="alert-heading">So... When you look at those problems, which customer segments do you think deal with any or all of them the most?</h4>
+</div>
+
+
 
 <%= render 'form' %>
 

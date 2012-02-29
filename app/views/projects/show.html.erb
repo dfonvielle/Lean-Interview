@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
 
-<h2>Create Problem Interview for <%= @project.name %></h2>
+<h1>Your Project: <%= @project.name %></h1>
+
+<br />
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+<br />
+<br />
 
 
-<p>
-  <%= render "interviews/problem_interview_form" %>
-</p>
 
-</br>
-
-<!-- <h3>Create Solution Interview</h3>
-
-<p>
-  <%= "This feature is coming soon." %>
-</p> -->
+<div class="row">
+  <div class="hero-unit span4">
+      <h2>Problem Interview</h2>
+      <br />
+      <p>Ideal for understanding customers' problems before building or launching a product they might not be interested in.</p>
+      <br />
+      <p>
+        <%= render "interviews/problem_interview_form" %>
+      </p>
+  </div>
+  
+  <div class="hero-unit span4">
+      <h2>Solution Interview</h2> 
+      <br />
+      <p>Ideal for understanding how customers respond to your solution to their problems.</p>
+      <br />
+      <br />
+      <br />
+      <button class="btn btn-primary btn-large disabled">Create Solution Interview</button>
+      <br />
+      <br />
+      <br />
+  </div>
+  
+</div>
 
 
 

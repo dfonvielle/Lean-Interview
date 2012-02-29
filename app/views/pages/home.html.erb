@@ -1,3 +1,76 @@
+<div class="alert">
+  <a class="close" data-dismiss="alert">×</a>
+  <%= guest_message %>
+</div>
 
 
-<%= render "projects/form" %>
+<div class="hero-unit">
+  <hgroup>
+    <h1>Will people actually <em>use</em> your product?</h1>
+    </br>
+   
+    <h2>We'll help you find out.</h2>
+    </br>
+  </hgroup>
+  <p>Enter the name of your product or service:</p>
+  
+  <%= simple_form_for(@project) do |f| %>
+    <% if @project.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+        <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.text_field :name %>
+    </div>
+
+    <button class="btn btn-success btn-large" type="submit">Submit</button>
+
+  <% end %>
+  
+</div> <!-- hero unit end -->
+
+
+<!-- row of 3 thumbnails -->
+
+<div class="row">
+ 
+ <div class="span4">
+   <ul class="thumbnails">
+     <li class="span4">
+       <a href="#" class="thumbnail">
+       <img src="http://placehold.it/300x180" alt="">
+       </a>
+     </li>
+   </ul>
+ </div>
+ 
+ <div class="span4">
+   <ul class="thumbnails">
+     <li class="span4">
+       <a href="#" class="thumbnail">
+       <img src="http://placehold.it/300x180" alt="">
+       </a>
+     </li>
+   </ul>
+ </div>
+ 
+ <div class="span4">
+   <ul class="thumbnails">
+     <li class="span4">
+       <a href="#" class="thumbnail">
+       <img src="http://placehold.it/300x180" alt="">
+       </a>
+     </li>
+   </ul>
+ </div>
+ 
+</div><!-- end of row of 3 thumbnails -->
+

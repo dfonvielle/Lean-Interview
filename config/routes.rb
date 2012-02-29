@@ -12,14 +12,15 @@ LeanInterview::Application.routes.draw do
   
   resources :projects 
   
+  get "projects/interview_choice"
+  
   resources :interviews do
+      resources :hypothetical_problems
       resources :customer_problem_prediction_lists
       resources :customer_segment_prediction_lists
       resources :customer_solution_prediction_lists
   end
   
-  get "projects/interview_choice"
-
   get "pages/home"
 
   get "pages/about"

@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   
 
-
   # GET /projects
   # GET /projects.json
   def index
@@ -45,9 +44,12 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
+    
 
     respond_to do |format|
+      
       if @project.save
+        
         format.html { redirect_to @project }
         format.json { render json: @project, status: :created, location: @project }
       else
@@ -55,6 +57,25 @@ class ProjectsController < ApplicationController
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def create_guest_project
+    
+    @project = Project.new(params[:project])
+    @interview = Interview.new
+    @interview.name = "Hallelujah, it works!"
+    @interview.project_id = @project.id
+
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @interview, :notice => "Kicking ass and taking names..." }
+        format.json { render json: @project, status: :created, location: @project }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+    
   end
 
   # PUT /projects/1
@@ -88,6 +109,7 @@ end
 
 # GET /projects/interview_choice
 # GET /projects/interview_choice.json
+
 def interview_choice
   @project = Project.find(params[:id])
 

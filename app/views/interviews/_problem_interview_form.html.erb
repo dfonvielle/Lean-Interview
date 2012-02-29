@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, "Enter name of an interview that you'll conduct:" %><br />
-    <%= f.text_field :name %>
+  <div class="hidden field">
+    <!-- <%= f.label :name, "Enter name of an interview that you'll conduct:" %><br /> -->
+    <%= f.hidden_field :name, :value => "TBD" %>
   </div>
   <div class="hidden field">
     <!-- <%= f.label :interview_type %><br /> -->
@@ -24,6 +24,6 @@
     <%= f.hidden_field :project_id, :value => @project.id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Problem Interview", :class => "btn btn-primary btn-large" %>
   </div>
 <% end %>

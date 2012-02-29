@@ -19,4 +19,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def user_home
+    if session[:user_id]
+      redirect_to user_url(current_user), :notice => "Home, sweet home."
+    end
+  end
+  
 end

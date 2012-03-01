@@ -1,44 +1,369 @@
-<%= simple_form_for([@interview, @interview_response]) do |f| %>
+<%= simple_form_for([@interview, @interview_response],:html => {:class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
 
     <div class="form-inputs">
-    
+   
     <div class="hidden-field">
          <%= f.hidden_field :interview_id, :value => @interview.id %>
     </div>
-    
+   
     <div class="hidden-field">
          <%= f.hidden_field :project_id, :value => @project.id %>
     </div>
     
+    
+    
+    
+      <fieldset>
+        <legend>Problem Investigation</legend> <br />
+        
+        
+        <div class="alert alert-info">
+          <fieldset>
+            <legend>Problem 1: <%= @hypothetical_problem.description_1 %></legend>
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                 <%= f.label :customer_solution_1_for_prob_1, "Current solutions used to solve the problem:" %>
+               </div>
+               <div class="span2">
+                  <%= f.check_box :customer_solution_1_for_prob_1 %>
+                  <%= @hypothetical_problem.predicted_solution_1_for_prob_1 %>
+               </div>
+               <div class="span2">
+                  <%= f.check_box :customer_solution_2_for_prob_1 %>
+                  <%= @hypothetical_problem.predicted_solution_2_for_prob_1 %>
+               </div>              
+               <div class="span2">
+                  <%= f.check_box :customer_solution_3_for_prob_1 %>
+                  <%= @hypothetical_problem.predicted_solution_3_for_prob_1 %> 
+               </div>             
+             </div>
+             
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                  <%= f.label :other_solutions_for_prob_1, "Other solutions used:" %>
+               </div>        
+               <div class="span6">
+                  <%= f.text_field :other_solutions_for_prob_1, :class => "span6" %>
+               </div>         
+             </div>
+             
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                  <%= f.label :solution_importance_for_prob_1, "A better solution to this problem is:" %>
+               </div>
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_1, no_need %> <%= no_need %>
+               </div>
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_1, nice %> <%= nice %>
+               </div>              
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_1, must %> <%= must %>
+               </div>             
+             </div>
+          </fieldset>
+        </div>
 
-    <%= f.input :customer_solution_1_for_prob_1 %>
-    <%= f.input :customer_solution_2_for_prob_1 %>
-    <%= f.input :customer_solution_3_for_prob_1 %>
-    <%= f.input :other_solutions_for_prob_1 %>
-    <%= f.input :solution_importance_for_prob_1 %>
-    <%= f.input :customer_solution_1_for_prob_2 %>
-    <%= f.input :customer_solution_2_for_prob_2 %>
-    <%= f.input :customer_solution_3_for_prob_2 %>
-    <%= f.input :other_solutions_for_prob_2 %>
-    <%= f.input :solution_importance_for_prob_2 %>
-    <%= f.input :customer_solution_1_for_prob_3 %>
-    <%= f.input :customer_solution_2_for_prob_3 %>
-    <%= f.input :customer_solution_3_for_prob_3 %>
-    <%= f.input :other_solutions_for_prob_3 %>
-    <%= f.input :solution_importance_for_prob_3 %>
-    <%= f.input :problem_1_ranking %>
-    <%= f.input :problem_2_ranking %>
-    <%= f.input :problem_3_ranking %>
-    <%= f.input :customer_segment_1 %>
-    <%= f.input :customer_segment_2 %>
-    <%= f.input :customer_segment_3 %>
-    <%= f.input :other_customer_segments %>
-    <%= f.input :additional_notes %>
-    <%= f.input :possible_early_adopter %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+        <div class="alert alert-info">
+          <fieldset>
+            <legend>Problem 2: <%= @hypothetical_problem.description_2 %></legend>
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                 <%= f.label :customer_solution_1_for_prob_2, "Current solutions used to solve the problem:" %>
+               </div>
+               <div class="span2">
+                  <%= f.check_box :customer_solution_1_for_prob_2 %>
+                  <%= @hypothetical_problem.predicted_solution_1_for_prob_2 %>
+               </div>
+               <div class="span2">
+                  <%= f.check_box :customer_solution_2_for_prob_2 %>
+                  <%= @hypothetical_problem.predicted_solution_2_for_prob_2 %>
+               </div>              
+               <div class="span2">
+                  <%= f.check_box :customer_solution_3_for_prob_2 %>
+                  <%= @hypothetical_problem.predicted_solution_3_for_prob_2 %> 
+               </div>             
+             </div>
+             
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                  <%= f.label :other_solutions_for_prob_2, "Other solutions used:" %>
+               </div>        
+               <div class="span6">
+                  <%= f.text_field :other_solutions_for_prob_2, :class => "span6" %>
+               </div>         
+             </div>
+             
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                  <%= f.label :solution_importance_for_prob_2, "A better solution to this problem is:" %>
+               </div>
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_2, no_need %> <%= no_need %>
+               </div>
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_2, nice %> <%= nice %>
+               </div>              
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_2, must %> <%= must %>
+               </div>             
+             </div>
+          </fieldset>
+        </div>
+
+        <div class="alert alert-info">
+          <fieldset>
+            <legend>Problem 3: <%= @hypothetical_problem.description_3 %></legend>
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                 <%= f.label :customer_solution_1_for_prob_3, "Current solutions used to solve the problem:" %>
+               </div>
+               <div class="span2">
+                  <%= f.check_box :customer_solution_1_for_prob_3 %>
+                  <%= @hypothetical_problem.predicted_solution_1_for_prob_3 %>
+               </div>
+               <div class="span2">
+                  <%= f.check_box :customer_solution_2_for_prob_3 %>
+                  <%= @hypothetical_problem.predicted_solution_2_for_prob_3 %>
+               </div>              
+               <div class="span2">
+                  <%= f.check_box :customer_solution_3_for_prob_3 %>
+                  <%= @hypothetical_problem.predicted_solution_3_for_prob_3 %> 
+               </div>             
+             </div>
+             
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                  <%= f.label :other_solutions_for_prob_3, "Other solutions used:" %>
+               </div>        
+               <div class="span6">
+                  <%= f.text_field :other_solutions_for_prob_3, :class => "span6" %>
+               </div>         
+             </div>
+             
+             <br />
+             
+             <div class="row">
+               <div class="span4">
+                  <%= f.label :solution_importance_for_prob_3, "A better solution to this problem is:" %>
+               </div>
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_3, no_need %> <%= no_need %>
+               </div>
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_3, nice %> <%= nice %>
+               </div>              
+               <div class="span2">
+                  <%= f.radio_button :solution_importance_for_prob_3, must %> <%= must %>
+               </div>             
+             </div>
+          </fieldset>
+        </div>
+      </fieldset>
+      
+      
+      <br />
+      <br />
+      <br />
+      
+    <fieldset>
+      <legend>Problem Ranking</legend>
+      
+      <div class="alert">
+        
+        <div class="row">
+          
+          <div class="span2 offset4">
+            <%= big_1 %>
+          </div>
+          
+          <div class="span2">
+            <%= big_2 %>
+          </div>
+          
+          <div class="span2">
+            <%= big_3 %>
+          </div>
+          
+        </div>
+        
+        <br />
+        
+        <div class="row">
+          
+          <div class="span4">
+            <%= f.label :problem_1_ranking, @hypothetical_problem.description_1 %>
+          </div>
+          
+          <div class="span2">
+            <%= f.radio_button :problem_1_ranking, big_1 %>
+          </div>
+          
+          <div class="span2">
+            <%= f.radio_button :problem_1_ranking, big_2 %>
+          </div>
+            
+          <div class="span2">
+            <%= f.radio_button :problem_1_ranking, big_3 %>
+          </div>    
+          
+        </div>
+        
+        
+        <div class="row">
+          
+          <div class="span4">
+            <%= f.label :problem_2_ranking, @hypothetical_problem.description_2 %>
+          </div>
+          
+          <div class="span2">
+            <%= f.radio_button :problem_2_ranking, big_1 %>
+          </div>
+          
+          <div class="span2">
+            <%= f.radio_button :problem_2_ranking, big_2 %>
+          </div>
+            
+          <div class="span2">
+            <%= f.radio_button :problem_2_ranking, big_3 %>
+          </div>    
+          
+        </div>
+
+        <div class="row">
+          
+          <div class="span4">
+            <%= f.label :problem_3_ranking, @hypothetical_problem.description_3 %>
+          </div>
+          
+          <div class="span2">
+            <%= f.radio_button :problem_3_ranking, big_1 %>
+          </div>
+          
+          <div class="span2">
+            <%= f.radio_button :problem_3_ranking, big_2 %>
+          </div>
+            
+          <div class="span2">
+            <%= f.radio_button :problem_3_ranking, big_3 %>
+          </div>    
+          
+        </div>      
+        
+      </div>
+      
+      
+    </fieldset>
+    
+    
+      <br />
+      <br />
+      <br />
+      
+    <fieldset>
+      <legend>Customer Segment</legend>
+      
+      <div class="alert alert-success">
+        
+        <div class="row">
+          <div class="span4">
+            <%= f.label :customer_segment_1, "Belongs to the following customer segments:" %>
+          </div>
+          <div class="span2">
+             <%= f.check_box :customer_segment_1 %>
+             <%= @customer_segment_prediction_list.customer_segment_1_prediction %>
+          </div>
+          <div class="span2">
+             <%= f.check_box :customer_segment_2 %>
+             <%= @customer_segment_prediction_list.customer_segment_2_prediction %>
+          </div>              
+          <div class="span2">
+             <%= f.check_box :customer_segment_3 %>
+             <%= @customer_segment_prediction_list.customer_segment_3_prediction %> 
+          </div>             
+        </div>
+        
+        <br />
+   
+        <div class="row">
+          <div class="span4">
+             <%= f.label :other_customer_segments, "Other customer segments:" %>
+          </div>        
+          <div class="span6">
+             <%= f.text_field :other_customer_segments, :class => "span6" %>
+          </div>         
+        </div>     
+        
+      </div>
+      
+      
+    </fieldset>
+      
+      
+      <br />
+      <br />
+      
+      <fieldset>
+        <legend>Additional Notes</legend>
+
+        <div class="alert alert-success">
+
+          <div class="row">
+            <div class="span12">
+              <%= f.text_field :additional_notes, :class => "span12" %>
+            </div>
+          
+          </div>
+
+        </div>
+
+
+      </fieldset>
+      
+      <fieldset>
+        <legend>Possible Early Adopter of "<%= @project.name %>" ?</legend>
+
+        <div class="alert alert-success">
+
+          <div class="row">
+            <div class="span2 offset3">
+              <%= f.radio_button :possible_early_adopter, "Yes" %> Yes
+            </div>
+            <div class="span2">
+              <%= f.radio_button :possible_early_adopter, "No" %> No
+            </div>
+            <div class="span2">
+              <%= f.radio_button :possible_early_adopter, "Maybe" %> Maybe
+            </div>
+          
+          </div>
+
+        </div>
+
+
+      </fieldset>
+      
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, :value => "Submit Interview Response", :class => "btn btn-primary" %>
+    </div>
 <% end %>

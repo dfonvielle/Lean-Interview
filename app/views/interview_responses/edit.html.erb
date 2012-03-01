@@ -1,6 +1,4 @@
-<h1>Editing interview_response</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @interview_response %> |
-<%= link_to 'Back', interview_responses_path %>
+<%= form_for @interview_response, :url => interview_response_path(@interview_response), :html => { :class => "edit_interview_response", :id => "edit_interview_response" } do |f| -%>
+  <input name="_method" type="hidden" value="put" />
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end -%>

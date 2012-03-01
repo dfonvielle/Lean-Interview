@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229212106) do
+ActiveRecord::Schema.define(:version => 20120301164939) do
 
   create_table "customer_problem_prediction_lists", :force => true do |t|
     t.string   "problem_1_prediction"
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(:version => 20120229212106) do
     t.boolean  "customer_segment_2"
     t.boolean  "customer_segment_3"
     t.string   "other_customer_segments"
-    t.text     "additional_notes"
+    t.string   "additional_notes"
     t.string   "possible_early_adopter"
     t.datetime "created_at"
     t.datetime "updated_at"

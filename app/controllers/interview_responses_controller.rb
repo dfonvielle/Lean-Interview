@@ -27,6 +27,8 @@ class InterviewResponsesController < ApplicationController
     
     @interview = Interview.find(params[:interview_id])
     @project = @interview.project
+    @hypothetical_problem = @interview.hypothetical_problem
+    @customer_segment_prediction_list = @interview.customer_segment_prediction_list
     @interview_response = InterviewResponse.new
 
     respond_to do |format|

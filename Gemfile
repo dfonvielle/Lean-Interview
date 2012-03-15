@@ -21,7 +21,7 @@ end
 
 gem "heroku"
 
-gem "dynamic_form"
+# gem "dynamic_form"
 
 
 

@@ -14,17 +14,17 @@
   <% @interview_responses.each do |interview_response| -%>
    <tr>
     <td><%= interview_response.id %></td>
-        <td><%= link_to interview_response.interview_id, interview_response_path(interview_response) %>
+        <td><%= link_to interview_response.interview_id %>
     </td>
         <td><%= interview_response.created_at %></td>
     <td>
-      <%= link_to "Show", interview_response_path(interview_response) %>
-      <%= link_to "Edit", edit_interview_response_path(interview_response) %>
-      <%= link_to "Destroy", interview_response_path(interview_response), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      <%= link_to "Show", interview_interview_response_path(interview_response.interview.id, interview_response.id) %>
+      <%= link_to "Edit" %>
+      <%= link_to "Destroy", :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
     </td>
     </tr>
     <% end -%>
    </tbody>
 </table>
 
-<%= link_to "New", new_interview_response_path, :class => 'btn btn-primary' %>
+<%= link_to "New", :class => 'btn btn-primary' %>

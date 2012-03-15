@@ -81,7 +81,7 @@
 <p><%= @interview_response.possible_early_adopter %></p>
 
 <div class="form-actions">
-<%= link_to "Back", interview_responses_path, :class => 'btn'  %>
-<%= link_to "Edit", edit_interview_response_path(@interview_response), :class => 'btn' %>
-<%= link_to "Delete", interview_response_path(@interview_response), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
+<%= link_to "Back", interview_interview_response_path(@interview), :class => 'btn'  %>
+<%= link_to "Edit", interview_interview_response_path(@interview), :class => 'btn' %>
+<%= link_to "Delete", interview_interview_response_path(@interview), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn' %>
 </div>

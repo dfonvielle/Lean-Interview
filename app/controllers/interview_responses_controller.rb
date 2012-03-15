@@ -45,11 +45,13 @@ class InterviewResponsesController < ApplicationController
   # POST /interview_responses
   # POST /interview_responses.json
   def create
+    
     @interview_response = InterviewResponse.new(params[:interview_response])
+    @interview = @interview_response.interview
 
     respond_to do |format|
       if @interview_response.save
-        format.html { redirect_to @interview_response, notice: 'Interview response was successfully created.' }
+        format.html { redirect_to interview_interview_responses_path(:interview_id => @interview.id), notice: 'Interview response was successfully created.' }
         format.json { render json: @interview_response, status: :created, location: @interview_response }
       else
         format.html { render action: "new" }

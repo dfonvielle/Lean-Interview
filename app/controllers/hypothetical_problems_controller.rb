@@ -49,6 +49,7 @@ class HypotheticalProblemsController < ApplicationController
   def create
     @hypothetical_problem = HypotheticalProblem.new(params[:hypothetical_problem])
     @interview = @hypothetical_problem.interview
+    @project = @interview.project
 
     respond_to do |format|
       if @hypothetical_problem.save

@@ -3,3 +3,10 @@
 
 en:
   hello: "Hello world"
+  
+  activerecord:    
+    attributes:      
+      hypothetical_problem:        
+        description_1: "Biggest problem"
+        predicted_solution_1_for_prob_1: "First current solution for biggest problem"
+        solution_importance_1: "Solution importance for biggest problem"

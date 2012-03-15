@@ -49,7 +49,7 @@ class InterviewsController < ApplicationController
           session[:guest_id] = @interview.id
         end      
         
-        format.html { redirect_to new_interview_hypothetical_problem_path(@interview), notice: 'Interview was successfully created.' }
+        format.html { redirect_to new_interview_hypothetical_problem_path(@interview) }
         format.json { render json: @interview, status: :created, location: @interview }
       else
         format.html { render action: "new" }

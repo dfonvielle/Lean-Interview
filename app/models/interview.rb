@@ -12,4 +12,6 @@ class Interview < ActiveRecord::Base
   
   has_one :hypothetical_problem
   
+  has_many :interview_responses
+  
 end

@@ -1,7 +1,8 @@
 <%= simple_form_for([@interview, @hypothetical_problem]) do |f| %>
   <% if @hypothetical_problem.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hypothetical_problem.errors.count, "error") %> prohibited this hypothetical problem from being saved:</h2>
+    <div class="alert alert-error">
+      <h3><%= pluralize(@hypothetical_problem.errors.count, "error") %> prohibited this hypothetical problem from being saved:</h3>
+      <br />
 
       <ul>
       <% @hypothetical_problem.errors.full_messages.each do |msg| %>
@@ -11,7 +12,7 @@
     </div>
   <% end %>
   
-<fieldset>
+<fieldset class="control-group error">
   <legend>Biggest Problem for Potential Customers</legend> <br />
   
     <div class="hidden-field">
@@ -20,7 +21,7 @@
   
     <div class="field">
       <%= f.label :description_1, "What is the biggest problem (or opportunity) that \"#{@project.name}\" is going to address?" %>
-      <%= f.text_field :description_1, :placeholder => "Enter problem", :class => "span6" %>
+      <%= f.text_field :description_1, :placeholder => "Enter problem", :class => "span6", :error_notification => "YUP!" %>
     </div>  
   
   
@@ -49,80 +50,99 @@
 </fieldset> 
 
 <br />
-<fieldset>
-  <legend>2nd Biggest Problem (optional, but recommended)</legend> <br />
+
+<span class="label label-success label-large" data-toggle="collapse" data-target="#problem-two">
+  2nd biggest problem
+</span>
+
+
+<div id="problem-two" class="collapse in">
+  <br />
+  <fieldset>
+    <legend>2nd Biggest Problem (optional, but recommended)</legend> <br />
   
-    <div class="hidden-field">
-         <%= f.hidden_field :interview_id, :value => @interview.id %>
-    </div>
+      <div class="hidden-field">
+           <%= f.hidden_field :interview_id, :value => @interview.id %>
+      </div>
   
-    <div class="field">
-      <%= f.label :description_2, "What is the second biggest problem (or opportunity) that \"#{@project.name}\" is going to address?" %>
-      <%= f.text_field :description_2, :placeholder => "Enter problem", :class => "span6" %>
-    </div>  
+      <div class="field">
+        <%= f.label :description_2, "What is the second biggest problem (or opportunity) that \"#{@project.name}\" is going to address?" %>
+        <%= f.text_field :description_2, :placeholder => "Enter problem", :class => "span6" %>
+      </div>  
   
   
-    <div class="solution-field">
-      <%= f.label :predicted_solution_1_for_prob_2, "What are the current solutions that people are using to solve this problem?" %>
-      <%= f.text_field :predicted_solution_1_for_prob_2, :placeholder => "Enter current solution" %>
-      <%= f.text_field :predicted_solution_2_for_prob_2, :placeholder => "(optional)" %>
-      <%= f.text_field :predicted_solution_3_for_prob_2, :placeholder => "(optional)" %>
-    </div>
+      <div class="solution-field">
+        <%= f.label :predicted_solution_1_for_prob_2, "What are the current solutions that people are using to solve this problem?" %>
+        <%= f.text_field :predicted_solution_1_for_prob_2, :placeholder => "Enter current solution" %>
+        <%= f.text_field :predicted_solution_2_for_prob_2, :placeholder => "(optional)" %>
+        <%= f.text_field :predicted_solution_3_for_prob_2, :placeholder => "(optional)" %>
+      </div>
     
-    <br />
-    <p>How important is a better solution to this problem for the people who have to deal with it?</p>
+      <br />
+      <p>How important is a better solution to this problem for the people who have to deal with it?</p>
     
-    <div class="row field radio">
-      <label class="span2">
-        <%= f.radio_button :solution_importance_2, "Don't need" %> Don't need
-      </label>
-      <label class="span2">
-        <%= f.radio_button :solution_importance_2, "Nice to have" %> Nice to have
-      </label>
-      <label class="span2">
-        <%= f.radio_button :solution_importance_2, "Must have" %> Must have
-      </label>      
-    </div> 
+      <div class="row field radio">
+        <label class="span2">
+          <%= f.radio_button :solution_importance_2, "Don't need" %> Don't need
+        </label>
+        <label class="span2">
+          <%= f.radio_button :solution_importance_2, "Nice to have" %> Nice to have
+        </label>
+        <label class="span2">
+          <%= f.radio_button :solution_importance_2, "Must have" %> Must have
+        </label>      
+      </div> 
   
-</fieldset>
+  </fieldset>
+</div>
 
 <br />
-<fieldset>
-  <legend>3rd Biggest Problem (optional, but recommended)</legend> <br />
+
+
+<span class="label label-success" data-toggle="collapse" data-target="#problem-three">
+  3rd biggest problem
+</span>
+
+<div id="problem-three" class="collapse in">
+  <br />
+  <fieldset>
+    <legend>3rd Biggest Problem (optional, but recommended)</legend> <br />
   
-    <div class="hidden-field">
-         <%= f.hidden_field :interview_id, :value => @interview.id %>
-    </div>
+      <div class="hidden-field">
+           <%= f.hidden_field :interview_id, :value => @interview.id %>
+      </div>
   
-    <div class="field">
-      <%= f.label :description_3, "What is the third biggest problem (or opportunity) that \"#{@project.name}\" is going to address?" %>
-      <%= f.text_field :description_3, :placeholder => "Enter problem", :class => "span6" %>
-    </div>  
+      <div class="field">
+        <%= f.label :description_3, "What is the third biggest problem (or opportunity) that \"#{@project.name}\" is going to address?" %>
+        <%= f.text_field :description_3, :placeholder => "Enter problem", :class => "span6" %>
+      </div>  
   
   
-    <div class="solution-field">
-      <%= f.label :predicted_solution_1_for_prob_3, "What are the current solutions that people are using to solve this problem?" %>
-      <%= f.text_field :predicted_solution_1_for_prob_3, :placeholder => "Enter current solution" %>
-      <%= f.text_field :predicted_solution_2_for_prob_3, :placeholder => "(optional)" %>
-      <%= f.text_field :predicted_solution_3_for_prob_3, :placeholder => "(optional)" %>
-    </div>
+      <div class="solution-field">
+        <%= f.label :predicted_solution_1_for_prob_3, "What are the current solutions that people are using to solve this problem?" %>
+        <%= f.text_field :predicted_solution_1_for_prob_3, :placeholder => "Enter current solution" %>
+        <%= f.text_field :predicted_solution_2_for_prob_3, :placeholder => "(optional)" %>
+        <%= f.text_field :predicted_solution_3_for_prob_3, :placeholder => "(optional)" %>
+      </div>
     
-    <br />
-    <p>How important is a better solution to this problem for the people who have to deal with it?</p>
+      <br />
+      <p>How important is a better solution to this problem for the people who have to deal with it?</p>
     
-    <div class="row field radio">
-      <label class="span2">
-        <%= f.radio_button :solution_importance_3, "Don't need" %> Don't need
-      </label>
-      <label class="span2">
-        <%= f.radio_button :solution_importance_3, "Nice to have" %> Nice to have
-      </label>
-      <label class="span2">
-        <%= f.radio_button :solution_importance_3, "Must have" %> Must have
-      </label>      
-    </div> 
+      <div class="row field radio">
+        <label class="span2">
+          <%= f.radio_button :solution_importance_3, "Don't need" %> Don't need
+        </label>
+        <label class="span2">
+          <%= f.radio_button :solution_importance_3, "Nice to have" %> Nice to have
+        </label>
+        <label class="span2">
+          <%= f.radio_button :solution_importance_3, "Must have" %> Must have
+        </label>      
+      </div> 
   
-</fieldset>
+  </fieldset>
+
+</div>
 
   <div class="form-actions">
     <%= f.submit "Submit", :class => "btn btn-primary btn-large" %>

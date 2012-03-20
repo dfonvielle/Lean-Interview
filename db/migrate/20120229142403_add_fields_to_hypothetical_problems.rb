@@ -15,12 +15,24 @@ class AddFieldsToHypotheticalProblems < ActiveRecord::Migration
     add_column :hypothetical_problems, :predicted_solution_2_for_prob_3, :string
     add_column :hypothetical_problems, :predicted_solution_3_for_prob_3, :string
     add_column :hypothetical_problems, :solution_importance_3, :string
-    remove_column :hypothetical_problems, :predicted_customer_segment_2, :string
-    remove_column :hypothetical_problems, :predicted_customer_segment_3, :string
-    remove_column :hypothetical_problems, :no_need_for_solution, :boolean
-    remove_column :hypothetical_problems, :nice_to_have_solution, :boolean
-    remove_column :hypothetical_problems, :must_have_solution, :boolean
   end
+  
+  def up
+    remove_column :hypothetical_problems, :predicted_customer_segment_2
+    remove_column :hypothetical_problems, :predicted_customer_segment_3
+    remove_column :hypothetical_problems, :no_need_for_solution
+    remove_column :hypothetical_problems, :nice_to_have_solution
+    remove_column :hypothetical_problems, :must_have_solution
+  end
+  
+  def down
+    add_column :hypothetical_problems, :predicted_customer_segment_2, :string
+    add_column :hypothetical_problems, :predicted_customer_segment_3, :string
+    add_column :hypothetical_problems, :no_need_for_solution, :boolean
+    add_column :hypothetical_problems, :nice_to_have_solution, :boolean
+    add_column :hypothetical_problems, :must_have_solution, :boolean
+  end
+  
 end
 
 

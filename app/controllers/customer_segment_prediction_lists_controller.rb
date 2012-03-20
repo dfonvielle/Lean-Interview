@@ -50,7 +50,7 @@ class CustomerSegmentPredictionListsController < ApplicationController
 
     respond_to do |format|
       if @customer_segment_prediction_list.save
-        format.html { redirect_to pages_verification_path(:interview_id => @interview.id), notice: 'Customer segment prediction list was successfully created.' }
+        format.html { redirect_to pages_verification_path(:interview_id => @interview.id) }
         format.json { render json: @customer_segment_prediction_list, status: :created, location: @customer_segment_prediction_list }
       else
         format.html { render action: "new" }

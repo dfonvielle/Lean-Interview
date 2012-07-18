@@ -4,6 +4,8 @@ gem 'rails', '3.1.2'
 
 gem "twitter-bootstrap-rails", "~> 2.0.1.0"
 
+gem "hominid", '3.0.4'
+
 gem 'simple_form'
 
 # Bundle edge Rails instead:

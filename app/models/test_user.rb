@@ -14,9 +14,7 @@ class TestUser < ActiveRecord::Base
   private
 
   def send_welcome_email
-    unless self.email.include?('@example.com') && Rails.env != 'test'
-      TestUserMailer.welcome_email(self).deliver
-    end
+    TestUserMailer.welcome_email(self).deliver
   end
   
 end

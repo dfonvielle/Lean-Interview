@@ -13,7 +13,7 @@ class TestUsersController < ApplicationController
   # GET /test_users/1
   # GET /test_users/1.json
   def show
-    @test_user = TestUser.find(params[:id])
+    @test_user = current_user
 
     respond_to do |format|
       format.html # show.html.erb

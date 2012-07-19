@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
 
   def create
     
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to user_url(user), :notice => "Welcome back!"
+    test_user = TestUser.find_by_email(params[:email])
+    if test_user && test_user.authenticate(params[:password])
+      session[:user_id] = test_user.id
+      redirect_to test_user_url(test_user), :notice => "Welcome back!"
     else
       flash[:notice] = "Please try again."
       render :new

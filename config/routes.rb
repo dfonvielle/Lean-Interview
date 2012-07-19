@@ -1,5 +1,7 @@
 LeanInterview::Application.routes.draw do
 
+  resources :test_users
+
   root :to => 'pages#home'
 
   get "sessions/new"

@@ -42,5 +42,11 @@ class PagesController < ApplicationController
     @interview = Interview.find(params[:interview_id])
     
   end
+  
+  def thank_you
+    
+    @test_user = TestUser.find(params[:test_user_id])
+    
+  end
 
 end

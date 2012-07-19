@@ -44,7 +44,7 @@ class TestUsersController < ApplicationController
 
     respond_to do |format|
       if @test_user.save
-        format.html { redirect_to @test_user, notice: 'Test user was successfully created.' }
+        format.html { redirect_to pages_thank_you_path(test_user_id: @test_user.id), notice: 'Thanks for signing up!' }
         format.json { render json: @test_user, status: :created, location: @test_user }
       else
         format.html { render action: "new" }

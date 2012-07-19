@@ -34,6 +34,10 @@ LeanInterview::Application.routes.draw do
 
   get "pages/hypotheses"
   
+  get "pages/thank_you"
+  
+  
+  
  
 
   # The priority is based upon order of creation:

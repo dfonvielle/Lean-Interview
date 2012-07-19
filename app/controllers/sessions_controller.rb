@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     test_user = TestUser.find_by_email(params[:email])
     if test_user && test_user.authenticate(params[:password])
       session[:user_id] = test_user.id
+      TestUserMailer.sign_in_email(test_user).deliver
       redirect_to test_user_url(test_user), :notice => "Welcome back!"
     else
       flash[:notice] = "Please try again."

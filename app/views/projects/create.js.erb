@@ -1,0 +1,15 @@
+$(document).ready(function(){
+	
+	<% if !@project.save %>
+		
+		$('input#project_name').effect("highlight", {color: "red"});
+		
+	<% else %>
+	
+		$('#project_name').val('');
+		$('div#all-projects-for-testing').prepend("<%= escape_javascript(render @project) %>");
+		$('div#<%= dom_id(@project) %>').effect("highlight", {color: "green"});
+	
+	<% end %>
+	
+});

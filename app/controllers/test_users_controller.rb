@@ -3,6 +3,7 @@ class TestUsersController < ApplicationController
   # GET /test_users.json
   def index
     @test_users = TestUser.all
+    @chart = create_chart
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,40 @@ class TestUsersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  private
+  
+  def create_chart
+    # Example from Gem Website
+    data_table = GoogleVisualr::DataTable.new
+    # Add Column Headers 
+    data_table.new_column('string', 'Year' ) 
+    data_table.new_column('number', 'Sales') 
+    data_table.new_column('number', 'Expenses') 
+    
+    # Add Rows and Values 
+    data_table.add_rows([ 
+      ['2004', 1000, 400], 
+      ['2005', 1170, 460], 
+      ['2006', 660, 1120], 
+      ['2007', 1030, 540] 
+    ])
+    
+    option = { width: 700, height: 600, title: 'Company Performance' }
+    @chart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+    
+    # CODE FROM STARTUP TUTORIAL
+    
+    # users_by_day = TestUser.group("DATE(created_at)").count
+    # data_table = GoogleVisualr::DataTable.new
+    # data_table.new_column('date')
+    # data_table.new_column('number')
+    # users_by_day.each do |day|
+    #   data_table.add_row([ Date.parse(day[0]), day[1]])
+    # end
+    # option = { width: 700, height: 240, title: 'Company Performance' }
+    # @chart = GoogleVisualr::Interactive::AnnotatedTimeLine.new(data_table, option)
+  end
+  
+  
 end

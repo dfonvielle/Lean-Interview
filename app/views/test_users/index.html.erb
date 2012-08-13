@@ -1,9 +1,110 @@
-<h1>Listing test_users</h1>
+
+<% content_for :head do %>
+  <!-- <script src='http://www.google.com/jsapi'></script> -->
+  <%= javascript_include_tag 'http://www.google.com/jsapi' %>
+<% end %>
+
+
+<h2>Test Users ................................................................................................</h2>
+
+<br />
+<br />
+
+<ul class="social">
+  
+  <li>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    <div id="tweet" style="display:inline-block;">
+      <a class="twitter-share-button" data-count="horizontal"
+      data-text="A new site I've discovered"
+      data-url="http://railsapps.github.com/rails-prelaunch-signup/"
+      data-via="launchrails"
+      href="https://twitter.com/share"></a>
+    </div>
+  </li>
+  
+  <li>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script> 
+    <div class="fb-like" data-href="http://www.alwaysgreater.com" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+  </li>
+  
+  
+</ul>
+
+  
+<br />
+<br />
+<br />
+
+<ul class="social">
+  
+  <li>
+
+  </li>
+  
+  <li>
+
+  </li>
+  
+  
+</ul>
+
+<span class="social-icon message"><%= "Share what you've learned: " %></span>
+
+<br />
+<br />
+
+<div class="social-icon">
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  <div id="tweet" style="display:inline-block;">
+    <a class="twitter-share-button" data-count="horizontal"
+    data-text="A new site I've discovered"
+    data-url="http://railsapps.github.com/rails-prelaunch-signup/"
+    data-via="launchrails"
+    href="https://twitter.com/share"></a>
+  </div>
+</div>
+
+<div class="social-icon">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script> 
+  <div class="fb-like" data-href="http://www.alwaysgreater.com" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<br />
+
+<!-- <iframe src="http://www.facebook.com/plugins/like.php?href=google.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+
+
+<br />
+<br />
 
 <table>
   <tr>
     <th>Email</th>
-    <th>Password digest</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +112,7 @@
 
 <% @test_users.each do |test_user| %>
   <tr>
-    <td><%= test_user.email %></td>
-    <td><%= test_user.password_digest %></td>
+    <td><%= " #{test_user.email} signed up #{test_user.created_at.to_date}" %></td>
     <td><%= link_to 'Show', test_user %></td>
     <td><%= link_to 'Edit', edit_test_user_path(test_user) %></td>
     <td><%= link_to 'Destroy', test_user, confirm: 'Are you sure?', method: :delete %></td>
@@ -23,3 +123,50 @@
 <br />
 
 <%= link_to 'New Test user', new_test_user_path %>
+
+<br />
+<br />
+
+<!-- <div id='chart' style= "width: 700px; height: 240px">
+  <%= render_chart(@chart, 'chart') %>
+</div> -->
+
+
+
+<br />
+<br />
+<br />
+
+<h2>A searchable database will go here...</h2>
+
+<br />
+<br />
+
+<table class="datatable table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @test_users.each do |test_user| %>
+      <tr>
+        <td><%= test_user.email %></td>
+        <td><%= test_user.created_at.strftime("%B %e, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+

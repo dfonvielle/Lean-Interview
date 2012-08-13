@@ -1,5 +1,81 @@
 <h1>Listing projects</h1>
 
+<br />
+
+
+<img src="http://i1070.photobucket.com/albums/u489/alwaysgreater/change_1_badge.png" border="0" alt="Always Greater Badge, Change 1">
+
+<img src="http://i1070.photobucket.com/albums/u489/alwaysgreater/change_5_badge.png" border="0" alt="Always Greater Badge, Change 5">
+
+<img src="http://i1070.photobucket.com/albums/u489/alwaysgreater/change_10_badge.png" border="0" alt="Always Greater Badge, Change 10">
+
+<img src="http://i1070.photobucket.com/albums/u489/alwaysgreater/change_25_badge.png" border="0" alt="Always Greater Badge, Change 25">
+
+<img src="http://i1070.photobucket.com/albums/u489/alwaysgreater/change_50_badge.png" border="0" alt="Always Greater Badge, Change 50">
+
+<img src="http://i1070.photobucket.com/albums/u489/alwaysgreater/change_75_badge.png" border="0" alt="Always Greater Badge, Change 75">
+
+<img src="http://i1070.photobucket.com/albums/u489/alwaysgreater/change_100_badge.png" border="0" alt="Always Greater Badge, Change 100">
+
+
+
+<h2>This will be a testing area for modals...</h2>
+
+<p>Project count: <%= @projects.count %></p>
+
+<p id="first-project">This is the first project:<%= @projects.first.name %> <%= link_to "Kill it!!!", project_path(@projects.first), method: :delete %></p>
+
+<br />
+
+<p>How about starting a new project?</p>
+
+<p>Enter the name of your product or service:</p>
+
+<%= simple_form_for(@project, remote: true) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+
+  <button class="btn btn-success btn-large" type="submit">Submit</button>
+
+<% end %>
+
+<p>These are ALL the projects for Javascript testing:</p>
+
+<div id="all-projects-for-testing">
+  <%= render @projects %>
+</div>
+
+
+
+<br />
+<br />
+
+
+<%= render "modal_testing" %>
+
+
+<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-large">Launch demo modal</a>
+
+<br />
+
+<%= link_to "My Modal", "modal_testing" %>
+
+<br />
+<br />
+
 <table>
   <tr>
     <th>Name</th>
@@ -9,12 +85,14 @@
   </tr>
 
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <%= div_for project do %>
+    <tr>
+      <td><%= project.name %></td>
+      <td><%= link_to 'Show', project %></td>
+      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+      <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    </tr>
+  <% end %>
 <% end %>
 </table>
 

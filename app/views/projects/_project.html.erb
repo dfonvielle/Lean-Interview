@@ -1,0 +1,3 @@
+<%= div_for project do %>
+ <p><%= project.name %> <%= link_to "Kill it!!!", project_path(project), method: :delete, remote: true %></p> 
+<% end %>

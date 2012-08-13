@@ -1,3 +1,19 @@
 // Place all the styles related to the TestUsers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.social {
+  list-style: none outside none;
+  
+  li {
+    display: inline;
+  }
+}
+
+ul.social { list-style: none outside none; }
+ul.social > li { display:inline; }
+
+
+.social-icon {
+  float: left;
+}

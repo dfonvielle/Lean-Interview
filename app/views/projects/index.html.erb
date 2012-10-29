@@ -1,3 +1,59 @@
+<% content_for :head do %>
+  <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+<% end %>
+
+<h1>Testing out Bootstrap 2.1 with offset and AwesomeFont</h1>
+
+<div class="row">
+  <p>Regular Row:</p>
+  <div class="span2">Span 2</div>
+  <div class="span2 offset3">Span 2 offset 3</div>
+  <div class="span3">Span 3</div>
+</div>
+
+<br />
+
+<div class="row-fluid">
+  <p>Fluid Row:</p>
+  <div class="span2">Span 2</div>
+  <div class="span2 offset3">Span 2 offset 3</div>
+  <div class="span3">Span 3</div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    Level 1 of column
+    <div class="row-fluid">
+      <div class="span4 offset2">Level 2 (span2 offset2)</div>
+      <div class="span6">Level 2</div>
+    </div>
+  </div>
+</div>
+
+<div class="btn-group">
+    <a class="btn btn-primary" href="#"><i class="icon-user"></i> User</a>
+    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+        <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+        <li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="i"></i> Make admin</a></li>
+    </ul>
+</div>
+
+<ul class="nav nav-list">
+  <li class="active"><a href="#"><i class="icon-home"></i> Home</a></li>
+  <li><a href="#"><i class="icon-book"></i> Library</a></li>
+  <li><a href="#"><i class="icon-pencil"></i> Applications</a></li>
+  <li><a href="#"><i class="icon-cogs"></i> Settings</a></li>
+</ul>
+
+<a href="#"><i class="icon-github"></i></a>
+
+
+
 <h1>Listing projects</h1>
 
 <br />

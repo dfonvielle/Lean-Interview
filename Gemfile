@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.2'
 
-gem "twitter-bootstrap-rails", "~> 2.0.1.0"
+gem "twitter-bootstrap-rails", "2.1.3"
 
 gem "hominid", '3.0.4'
 

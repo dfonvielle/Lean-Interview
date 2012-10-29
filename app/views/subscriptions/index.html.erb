@@ -1,0 +1,74 @@
+<% content_for :head do %>
+  <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+<% end %>
+
+<h1>Testing Stripe Code/API calls</h1>
+
+<br />
+<br />
+
+<% customer = Stripe::Customer.retrieve("cus_0EBZTRs9soc1cF") %>
+
+<br />
+
+Customer description: <%= customer.description %>
+<br />
+Customer active card: <%= customer.active_card %>
+
+<br />
+Customer : <%= customer %>
+<br >
+
+Customer email: <%= customer.email %>
+
+<% customer.email = "bogus@bogus.com" %>
+<% customer.save %>
+<br />
+
+Let's see what happens with customer email:  <%= customer.email %>
+
+<br />
+
+Subscription: <%= customer.subscription %>
+
+<br />
+
+Subscription start: <%= Time.at(customer.subscription.current_period_start) %>, <%= customer.subscription.current_period_start %>
+
+<br />
+
+Subscription end: <%= Time.at(customer.subscription.current_period_end) %>, <%= customer.subscription.current_period_end %>
+
+<br />
+
+
+<h1>Listing subscriptions</h1>
+
+<br />
+
+<%= image_tag("change_1_badge_copy.png") %>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Plan</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subscriptions.each do |subscription| %>
+  <tr>
+    <td><%= subscription.email %></td>
+    <td><%= subscription.plan_id %></td>
+    <td><%= link_to 'Show', subscription %></td>
+    <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
+    <td><%= link_to 'Destroy', subscription, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Subscription', new_subscription_path %>

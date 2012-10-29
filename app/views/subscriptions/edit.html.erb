@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+<% end %>
+
+<h1>Editing subscription</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @subscription %> |
+<%= link_to 'Back', subscriptions_path %>

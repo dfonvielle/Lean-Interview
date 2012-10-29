@@ -8,7 +8,7 @@ gem "hominid", '3.0.4'
 
 gem "google_visualr", "2.1.2"
 
-gem "jquery-datatables-rails", '1.10.0'
+# gem "jquery-datatables-rails", '1.10.0'
 
 gem 'simple_form'
 

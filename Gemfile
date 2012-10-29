@@ -8,6 +8,8 @@ gem "hominid", '3.0.4'
 
 gem "google_visualr", "2.1.2"
 
+gem "jquery-datatables-rails", '1.10.0'
+
 gem 'simple_form'
 
 gem 'stripe', "1.7.0"
@@ -37,7 +39,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.5.rc.2'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
-  gem "jquery-datatables-rails", '1.10.0'
 end
 
 gem 'jquery-rails'
